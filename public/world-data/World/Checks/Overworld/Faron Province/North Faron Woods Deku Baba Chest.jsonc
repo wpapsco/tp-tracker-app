@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Overworld", "Chest", "Faron Woods", "ARC"],
+    "itemId": "Yellow_Rupee"
+}

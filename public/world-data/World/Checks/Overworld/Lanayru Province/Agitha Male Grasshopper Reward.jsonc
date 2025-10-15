@@ -1,0 +1,5 @@
+{
+    "requirements": "Male_Grasshopper",
+    "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
+    "itemId": "Progressive_Wallet"
+}

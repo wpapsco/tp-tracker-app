@@ -1,0 +1,5 @@
+{
+    "requirements": "Lantern",
+    "checkCategory": ["Overworld", "Chest", "Eldin Stockcave", "ARC"],
+    "itemId": "Orange_Rupee"
+}

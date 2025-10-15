@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Npc", "Dungeon", "Snowpeak Ruins", "Dungeon Items", "Dungeon Map"],
+    "itemId": "Snowpeak_Ruins_Dungeon_Map"
+}

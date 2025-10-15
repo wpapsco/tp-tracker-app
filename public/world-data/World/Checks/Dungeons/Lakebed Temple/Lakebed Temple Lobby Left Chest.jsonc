@@ -1,0 +1,5 @@
+{
+    "requirements": "Zora_Armor",
+    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple", "ARC"],
+    "itemId": "Arrows_20"
+}

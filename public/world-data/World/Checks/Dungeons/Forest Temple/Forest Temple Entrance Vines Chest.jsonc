@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatWalltula",
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple", "ARC"],
+    "itemId": "Yellow_Rupee"
+}

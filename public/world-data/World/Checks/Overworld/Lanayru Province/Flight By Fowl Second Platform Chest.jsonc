@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Overworld", "Chest", "Lake Hylia", "DZX"],
+    "itemId": "Piece_of_Heart"
+}

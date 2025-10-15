@@ -1,0 +1,5 @@
+{
+    "requirements": "HasDamagingItem",
+    "checkCategory": ["Overworld", "Bulblin Camp", "Boss"],
+    "itemId": "Piece_of_Heart"
+}

@@ -1,0 +1,5 @@
+{
+  "requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)",
+  "checkCategory": [ "Overworld", "Npc", "Kakariko Graveyard", "ARC" ],
+  "itemId": "Zora_Armor"
+}

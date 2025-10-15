@@ -1,0 +1,5 @@
+{
+    "requirements": "Boomerang and (CanDefeatBombling or canSmash)",
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple"],
+    "itemId": "Piece_of_Heart"
+}

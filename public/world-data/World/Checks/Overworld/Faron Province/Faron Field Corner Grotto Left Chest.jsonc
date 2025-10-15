@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Faron Province", "DZX"],
+    "itemId": "Red_Rupee"
+}

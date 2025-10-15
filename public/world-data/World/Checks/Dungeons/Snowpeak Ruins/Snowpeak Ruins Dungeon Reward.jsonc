@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatBlizzeta",
+    "checkCategory": ["Dungeon", "Snowpeak Ruins", "Dungeon Reward", "REL", "ARC"],
+    "itemId": "Progressive_Mirror_Shard"
+}

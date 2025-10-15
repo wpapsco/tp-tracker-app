@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple"],
+    "itemId": "Piece_of_Heart"
+}

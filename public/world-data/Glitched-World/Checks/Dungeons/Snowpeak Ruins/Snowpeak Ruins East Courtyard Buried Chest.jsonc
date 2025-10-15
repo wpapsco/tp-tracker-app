@@ -1,0 +1,5 @@
+{
+    "requirements": "Shadow_Crystal",
+    "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins"],
+    "itemId": "Red_Rupee"
+}

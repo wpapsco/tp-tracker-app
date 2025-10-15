@@ -1,0 +1,5 @@
+{
+    "requirements": "canKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut and Boomerang and Lantern and (Progressive_Clawshot, 2)",
+    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "ARC"],
+    "itemId": "Silver_Rupee"
+}

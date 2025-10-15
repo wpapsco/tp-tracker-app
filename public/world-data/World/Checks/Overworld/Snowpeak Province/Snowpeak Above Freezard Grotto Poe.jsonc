@@ -1,0 +1,5 @@
+{
+    "requirements": "Shadow_Crystal",
+    "checkCategory": ["Overworld", "Poe", "Snowpeak Province"],
+    "itemId": "Poe_Soul"
+}
