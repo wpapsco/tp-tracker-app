@@ -70,7 +70,7 @@ const getParser = (settings: Settings, rooms: Rooms): Parjser<CheckFn> => {
             aWord
         ),
         map(([_, lhs, settingOp, rhs]) => state => {
-            console.log("checking setting", lhs, rhs)
+            // console.log("checking setting", lhs, rhs)
             return settingOp(capitalizeBool(lhs), rhs)
         })
     );
@@ -78,7 +78,7 @@ const getParser = (settings: Settings, rooms: Rooms): Parjser<CheckFn> => {
     const roomParser: Parjser<CheckFn> = string("Room.").pipe(
         then(anyStringOf(...sortedLongestToShortest(Object.keys(rooms).map(e => e.replaceAll(" ", "_"))))),
         map(([_, roomName]) => s => {
-            console.log(roomName.replaceAll("_", " "), s.openRooms)
+            // console.log(roomName.replaceAll("_", " "), s.openRooms)
             return s.openRooms.includes(roomName.replaceAll("_", " "))
         })
     )

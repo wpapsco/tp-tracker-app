@@ -95,6 +95,8 @@ export function testSpheres(spoilerLogPath: string = 'example-spoiler-log.json')
 
             // Verify the check is available
             if (!checkData.available) {
+                // console.log(logic.getHeldItems())
+                // console.log(logic.getItemState())
                 console.error(`\n❌ LOGIC ERROR: Check "${checkName}" is NOT AVAILABLE but should be!`);
                 console.error(`   Sphere: ${sphereName}`);
                 console.error(`   Location: ${foundRegion} -> ${foundRoom}`);

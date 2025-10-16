@@ -10,7 +10,7 @@ export class RandoLogic {
     private loadedChecks: Checks = {};
     private parser: Parjser<CheckFn>
     private checkedChecks: Set<string> = new Set()
-
+    
     public constructor(spoilerLog: SpoilerLog, rooms: RoomEntry[], checks: CheckEntry[]) {
         this.itemState = {items: {}, openRooms:[]}
         this.spoilerLog = spoilerLog
@@ -54,8 +54,8 @@ export class RandoLogic {
 
     public getAllChecks(): Checklist {
         let checklist: Checklist = {}
-        console.log("getting all checks")
-        console.log(this.itemState.openRooms)
+        // console.log("getting all checks")
+        // console.log(this.itemState.openRooms)
 
         Object.keys(this.loadedRooms).forEach(roomName => {
             const room = this.loadedRooms[roomName]
@@ -91,30 +91,40 @@ export class RandoLogic {
 
     private findOpenRooms() {
         this.itemState.openRooms = ["Outside Links House"]
-        const visited: string[] = []
-        for (var i = 0; i < this.itemState.openRooms.length; i++) {
-            const curRoomName = this.itemState.openRooms[i];
-            if (!curRoomName) return [];
-            console.log("checking room " + curRoomName)
-            visited.push(curRoomName)
-            const currentRoom = this.loadedRooms[curRoomName]
-            if (!currentRoom) return [];
-            const openExits = currentRoom.Exits.filter(ex => {
-                if (visited.includes(ex.ConnectedArea)) return false;
-                if (!ex.parsedRequirements) return false;
-                return ex.parsedRequirements({items: this.itemState.items, openRooms: this.itemState.openRooms})
-            }).map(ex => ex.ConnectedArea)
-            console.log("adding rooms: " + JSON.stringify(openExits))
-            this.itemState.openRooms = this.itemState.openRooms.concat(openExits)
+        const s = new Set()
+        let addedNewRoom = true
+        while (addedNewRoom) {
+            addedNewRoom = false;
+            const visited: string[] = []
+            for (var i = 0; i < this.itemState.openRooms.length; i++) {
+                const curRoomName = this.itemState.openRooms[i];
+                if (!curRoomName) return [];
+                // console.log("checking room " + curRoomName)
+                visited.push(curRoomName)
+                const currentRoom = this.loadedRooms[curRoomName]
+                if (!currentRoom) return [];
+                const openExits = currentRoom.Exits.filter(ex => {
+                    if (visited.includes(ex.ConnectedArea)) return false;
+                    if (!ex.parsedRequirements) return false;
+                    if (this.itemState.openRooms.includes(ex.ConnectedArea)) return false;
+                    return ex.parsedRequirements({items: this.itemState.items, openRooms: this.itemState.openRooms})
+                }).map(ex => ex.ConnectedArea)
+                // console.log("adding rooms: " + JSON.stringify(openExits))
+                this.itemState.openRooms = this.itemState.openRooms.concat(openExits)
+                addedNewRoom = addedNewRoom || (openExits.length > 0)
+            }
+            // console.log("end of loop, added new room =", addedNewRoom)
+            // console.log("one iteration's rooms:")
+            // console.log(this.itemState.openRooms)
         }
-        console.log("finished checking rooms")
-        console.log(this.itemState.openRooms)
+        // console.log("finished checking rooms")
+        // console.log(this.itemState.openRooms)
     }
 
     private unlockItem(item: Item) {
         const x = Item[item] as keyof typeof Item;
         this.itemState.items[x] = (this.itemState.items[x] || 0) + 1
-        console.log(item, x, this.itemState.items);
+        // console.log(item, x, this.itemState.items);
         this.findOpenRooms()
     }
 

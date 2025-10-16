@@ -1212,7 +1212,6 @@ export const getFunctions = (settings: Settings) => {
     };
 
     const canClearForest = (state: ItemState): boolean => {
-        console.log("checking canClearForest", state)
         return (
             canCompleteForestTemple(state)
             || settings.faronWoodsLogic === "Open"
