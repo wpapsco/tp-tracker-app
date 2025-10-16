@@ -1,6 +1,7 @@
 import { RandoLogic } from './RandoLogic';
 import { loadWorldRooms, loadWorldChecks } from './data/loadRooms';
 import type { SpoilerLog } from './types';
+import { Item } from './types';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -9,7 +10,18 @@ export function testSpheres(spoilerLogPath: string = 'example-spoiler-log.json')
 
     // Load the spoiler log
     const spoilerLogContent = readFileSync(join(process.cwd(), spoilerLogPath), 'utf-8');
-    const spoilerLog: SpoilerLog & { spheres?: { [sphereName: string]: { [checkName: string]: string } } } = JSON.parse(spoilerLogContent);
+    const rawSpoilerLog = JSON.parse(spoilerLogContent);
+
+    // Convert string item names to Item enum values
+    const itemPlacements: { [checkName: string]: Item } = {};
+    for (const [checkName, itemName] of Object.entries(rawSpoilerLog.itemPlacements as { [key: string]: string })) {
+        itemPlacements[checkName] = Item[itemName as keyof typeof Item];
+    }
+
+    const spoilerLog: SpoilerLog & { spheres?: { [sphereName: string]: { [checkName: string]: string } } } = {
+        ...rawSpoilerLog,
+        itemPlacements
+    };
 
     if (!spoilerLog.spheres) {
         console.error('❌ ERROR: No spheres found in spoiler log');
