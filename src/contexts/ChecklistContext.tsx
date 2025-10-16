@@ -145,11 +145,11 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       let checks = checksData;
 
       if (!rooms || !checks) {
-        // Fetch rooms and checks data from single API endpoint
-        const response = await fetch('/api/world-data');
+        // Fetch rooms and checks data from static JSON file
+        const response = await fetch('/world-data.json');
 
         if (!response.ok) {
-          throw new Error('Failed to fetch world data from server');
+          throw new Error('Failed to fetch world data');
         }
 
         const data = await response.json();
