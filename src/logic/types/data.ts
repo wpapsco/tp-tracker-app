@@ -72,7 +72,8 @@ export interface Checklist {
         [room: string]: {
             [checkName: string]: {
                 available: boolean,
-                checked: boolean
+                checked: boolean,
+                category: string[]
             }
         }
     }

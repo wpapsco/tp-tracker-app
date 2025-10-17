@@ -1,5 +1,5 @@
 import { RandoLogic } from './RandoLogic';
-import { loadWorldRooms, loadWorldChecks } from './data/loadRooms';
+import { loadWorldRooms, loadWorldChecks, loadWorldData } from './data/loadRooms';
 import type { SpoilerLog } from './types';
 import { Item } from './types';
 import { readFileSync } from 'fs';
@@ -30,13 +30,14 @@ export function testSpheres(spoilerLogPath: string = 'example-spoiler-log.json')
 
     // Load rooms and checks data
     console.log('Loading world data...');
-    const rooms = loadWorldRooms();
-    const checks = loadWorldChecks();
-    console.log(`Loaded ${rooms.length} rooms and ${checks.length} checks\n`);
+    const worldData = loadWorldData()
+    // const rooms = loadWorldRooms();
+    // const checks = loadWorldChecks();
+    console.log(`Loaded ${worldData.rooms.length} rooms and ${worldData.checks.length} checks\n`);
 
     // Create RandoLogic instance
     console.log('Initializing RandoLogic...');
-    const logic = new RandoLogic(spoilerLog, rooms, checks);
+    const logic = new RandoLogic(spoilerLog, worldData);
     console.log('RandoLogic initialized\n');
 
     // Get all spheres in order

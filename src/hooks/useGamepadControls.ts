@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useChecklist } from '@/contexts/ChecklistContext';
 import { sortRegions } from '@/utils/regionOrder';
+import {orderedNames} from '@/components/RegionTabs';
 
 interface CheckItem {
   checkName: string;
@@ -89,7 +90,7 @@ export function useGamepadControls() {
 
       // Shoulder buttons for tab navigation (LB = button 4, RB = button 5)
       if (buttons[4]?.pressed && !prevButtonsRef.current[4]) {
-        const regions = sortRegions(Object.keys(checklist));
+        const regions = orderedNames;
         const currentIndex = regions.indexOf(selectedRegion);
         if (currentIndex > 0) {
           setSelectedRegion(regions[currentIndex - 1]);
@@ -97,7 +98,7 @@ export function useGamepadControls() {
       }
 
       if (buttons[5]?.pressed && !prevButtonsRef.current[5]) {
-        const regions = sortRegions(Object.keys(checklist));
+        const regions = orderedNames;
         const currentIndex = regions.indexOf(selectedRegion);
         if (currentIndex < regions.length - 1) {
           setSelectedRegion(regions[currentIndex + 1]);

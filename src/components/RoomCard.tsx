@@ -5,6 +5,7 @@ import { CheckItem } from './CheckItem';
 interface CheckData {
   available: boolean;
   checked: boolean;
+  category: string[];
 }
 
 interface RoomCardProps {

@@ -1,7 +1,8 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { type Checklist, type SpoilerLog, Item } from '@/logic';
+import { type Checklist, type SpoilerLog, CheckEntry, Checks, Item, RoomEntry, Rooms } from '@/logic';
+import { RandoLogic, SaveData, WorldData } from '@/logic/RandoLogic';
 
 // Sample checklist data for demonstration (fallback if RandoLogic isn't available)
 const sampleChecklist: Checklist = {
@@ -9,21 +10,25 @@ const sampleChecklist: Checklist = {
     "Link's house": {
       "Main room chest": {
         available: false,
-        checked: false
+        checked: false,
+        category: []
       },
       "Basement chest": {
         available: true,
-        checked: true
+        checked: true,
+        category: []
       }
     },
     "Village": {
       "Cradle": {
         available: false,
-        checked: false
+        checked: false,
+        category: []
       },
       "Shop Slingshot": {
         available: true,
-        checked: true
+        checked: true,
+        category: []
       }
     }
   },
@@ -31,11 +36,13 @@ const sampleChecklist: Checklist = {
     "Field Area": {
       "Bridge Chest": {
         available: true,
-        checked: false
+        checked: false,
+        category: []
       },
       "Tree Heart Piece": {
         available: false,
-        checked: false
+        checked: false,
+        category: []
       }
     }
   },
@@ -43,11 +50,13 @@ const sampleChecklist: Checklist = {
     "Entrance": {
       "Vines Chest": {
         available: true,
-        checked: false
+        checked: false,
+        category: []
       },
       "Gale Boomerang": {
         available: false,
-        checked: false
+        checked: false,
+        category: []
       }
     }
   }
@@ -118,15 +127,18 @@ interface ChecklistContextType {
   selectedRegion: string;
   setSelectedRegion: (region: string) => void;
   toggleCheck: (checkName: string) => void;
-  loadSpoilerLog: (spoilerLog: SpoilerLog, roomsData?: any[], checksData?: any[]) => Promise<void>;
+  loadSpoilerLog: (spoilerLog: SpoilerLog) => void;
 }
 
 const ChecklistContext = createContext<ChecklistContextType | undefined>(undefined);
 
+let worldData: WorldData | null = null
 export function ChecklistProvider({ children }: { children: ReactNode }) {
   const [checklist, setChecklist] = useState<Checklist>(sampleChecklist);
   const [selectedRegion, setSelectedRegion] = useState<string>('Ordona Province');
-  const [logic, setLogic] = useState<any>(null); // RandoLogic instance
+  const [logic, setLogic] = useState<RandoLogic | null>(null);
+  {/* let rooms: RoomEntry[] = [] */}
+  {/* let checks: CheckEntry[] = [] */}
 
   // Initialize with sample data if needed
   useEffect(() => {
@@ -138,34 +150,39 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const loadSpoilerLog = async (spoilerLog: SpoilerLog, roomsData?: any[], checksData?: any[]) => {
+  useEffect(() => {
+      loadWorldData().then(() => loadSaveData())
+  }, [])
+
+  const loadWorldData = async () => {
+      // Fetch rooms and checks data from static JSON file
+      const response = await fetch('/world-data.json');
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch world data');
+      }
+  
+      worldData = await response.json();
+
+      if (!worldData) {
+        throw new Error('World data is missing');
+      }
+  }
+
+  const loadSpoilerLog = (spoilerLog: SpoilerLog) => {
     try {
-      // If rooms and checks data aren't provided, fetch them from public folder
-      let rooms = roomsData;
-      let checks = checksData;
-
-      if (!rooms || !checks) {
-        // Fetch rooms and checks data from static JSON file
-        const response = await fetch('/world-data.json');
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch world data');
-        }
-
-        const data = await response.json();
-        rooms = data.rooms;
-        checks = data.checks;
+      console.log("loading spoiler log")
+      if (!worldData) {
+        console.log("no world data somehow")
+        return;
       }
 
-      if (!rooms || !checks) {
-        throw new Error('Rooms or checks data is missing');
-      }
-
-      const { RandoLogic } = await import('@/logic/RandoLogic');
-      const newLogic = new RandoLogic(spoilerLog, rooms, checks);
+      const newLogic = new RandoLogic(spoilerLog, worldData);
+      console.log("made new logic")
       setLogic(newLogic);
       const checklistData = newLogic.getAllChecks();
       setChecklist(checklistData);
+      console.log("set checklist")
 
       // Update selected region to the first one
       const regions = Object.keys(checklistData);
@@ -180,20 +197,10 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
 
   const toggleCheck = (checkName: string) => {
     if (logic) {
-      // If we have RandoLogic, use it to toggle the check
-      const location = findCheckInChecklist(checkName);
-      if (location) {
-        const { region, room } = location;
-        const isChecked = checklist[region][room][checkName].checked;
-        if (isChecked) {
-          logic.closeCheck(checkName);
-        } else {
-          logic.openCheck(checkName);
-        }
-        // Update checklist from logic
-        const updatedChecklist = logic.getAllChecks();
-        setChecklist(updatedChecklist);
-      }
+      logic.toggleCheck(checkName);
+      const updatedChecklist = logic.getAllChecks();
+      setChecklist(updatedChecklist);
+      save()
     } else {
       // Fallback: manually toggle the check in the sample data
       const location = findCheckInChecklist(checkName);
@@ -215,6 +222,31 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       }
     }
   };
+
+  const save = () => {
+    if (logic) {
+      localStorage.setItem("tp-rando-save-data", JSON.stringify(logic.getSaveJson()))
+    }
+  }
+
+  const loadSaveData = () => {
+    const loadedData = localStorage.getItem("tp-rando-save-data")
+    if (!loadedData || !worldData) return;
+    const saveData = (JSON.parse(loadedData) as SaveData)
+    const newLogic = RandoLogic.fromSaveData(worldData, saveData)
+    setLogic(newLogic)
+    const checklistData = newLogic.getAllChecks()
+    console.log(checklistData)
+    setChecklist(checklistData)
+    const regions = Object.keys(checklistData);
+    if (regions.length > 0) {
+      setSelectedRegion(regions[0]);
+    }
+  }
+
+  const clearSaveData = () => {
+    localStorage.removeItem("tp-rando-save-data")
+  }
 
   const findCheckInChecklist = (checkName: string): { region: string; room: string } | null => {
     for (const region in checklist) {

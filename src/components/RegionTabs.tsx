@@ -5,13 +5,40 @@ import { SpoilerLogUpload } from './SpoilerLogUpload';
 import { sortRegions } from '@/utils/regionOrder';
 import { useEffect, useRef } from 'react';
 
+
+export const orderedNames = [
+    "Ordona Province",
+    "Ordon Village",
+    "Faron Woods",
+    "Kakariko Village",
+    "Death Mountain",
+    "Lake Hylia",
+    "Zoras Domain",
+    "Gerudo Desert",
+    "Snowpeak Province",
+    "Sacred Grove",
+    "Hidden Village",
+    "Hyrule Field - Faron Province",
+    "Hyrule Field - Eldin Province",
+    "Hyrule Field - Lanayru Province",
+    "Castle Town",
+    "Forest Temple",
+    "Goron Mines",
+    "Lakebed Temple",
+    "Arbiters Grounds",
+    "Snowpeak Ruins",
+    "Temple of Time",
+    "City in The Sky",
+    "Palace of Twilight",
+    "Hyrule Castle",
+    "Ganondorf",
+]
+
 export function RegionTabs() {
   const { checklist, selectedRegion, setSelectedRegion } = useChecklist();
   const allRegions = Object.keys(checklist);
   const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
-
-  // Sort regions by the defined order
-  const sortedRegions = sortRegions(allRegions);
+  console.log(allRegions);
 
   // Count unchecked available checks for each region
   const getAvailableCount = (region: string) => {
@@ -24,6 +51,11 @@ export function RegionTabs() {
     });
     return count;
   };
+
+
+  useEffect(() => {
+    setSelectedRegion(orderedNames[0]);
+  }, [])
 
   // Scroll selected tab into view
   useEffect(() => {
@@ -51,7 +83,7 @@ export function RegionTabs() {
 
       {/* Region Tabs - Scrollable */}
       <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-        {sortedRegions.map((region) => {
+        {orderedNames.map((region) => {
           const availableCount = getAvailableCount(region);
           return (
             <button

@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, statSync } from 'fs';
 import { join, basename } from 'path';
 import type { CheckEntry, RoomEntry } from '../types/index';
+import {WorldData} from '../RandoLogic';
 
 // Function to recursively find all .jsonc files in a directory
 function findJsoncFiles(dir: string): string[] {
@@ -82,6 +83,19 @@ export function loadWorldChecks(): CheckEntry[] {
 // Load all Glitched-World rooms
 export function loadGlitchedWorldRooms(): RoomEntry[] {
     return loadRoomsFromDirectory(join(process.cwd(), 'public', 'world-data', 'Glitched-World', 'Rooms'));
+}
+
+export function loadGlitchedWorldChecks(): CheckEntry[] {
+    return loadChecksFromDirectory(join(process.cwd(), 'public', 'world-data', 'Glitched-World', 'Checks'))
+}
+
+export function loadWorldData(): WorldData {
+    return {
+        "checks": loadWorldChecks(),
+        "rooms": loadWorldRooms(),
+        "glitchedChecks": loadGlitchedWorldChecks(),
+        "glitchedRooms": loadGlitchedWorldRooms()
+    }
 }
 
 // Load rooms based on logic mode

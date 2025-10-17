@@ -1,14 +1,16 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-import { loadWorldRooms, loadWorldChecks } from '../src/logic/data/loadRooms';
+import { loadWorldRooms, loadWorldChecks, loadGlitchedWorldRooms, loadGlitchedWorldChecks } from '../src/logic/data/loadRooms';
 
 console.log('Generating static world-data.json...');
 
 try {
   const rooms = loadWorldRooms();
   const checks = loadWorldChecks();
+  const glitchedRooms = loadGlitchedWorldRooms();
+  const glitchedChecks = loadGlitchedWorldChecks();
 
-  const worldData = { rooms, checks };
+  const worldData = { rooms, checks, glitchedRooms, glitchedChecks };
 
   // Write to public directory so it's accessible as a static asset
   const outputPath = join(process.cwd(), 'public', 'world-data.json');

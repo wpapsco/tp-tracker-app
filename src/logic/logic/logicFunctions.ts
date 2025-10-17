@@ -1423,6 +1423,10 @@ export const getFunctions = (settings: Settings) => {
         return count;
     };
 
+    const CanGetBugWithLantern = (state: ItemState): boolean => {
+        return false;
+    }
+
     // Export all logic functions as a single object
 
     const logicFunctions: {[key: string]: CheckFn} = {
@@ -1578,6 +1582,7 @@ export const getFunctions = (settings: Settings) => {
         canClearForestGlitched,
         CanCompleteEldinTwilightGlitched,
         CanSkipKeyToDekuToad,
+        CanGetBugWithLantern,
         // GetItemWheelSlotCount
     };
     return logicFunctions;
