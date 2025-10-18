@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Overworld", "Chest", "Gerudo Desert", "ARC"],
+    "itemId": "Arrows_10"
+}

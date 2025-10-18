@@ -1,0 +1,5 @@
+{
+    "requirements": "(Progressive_Bow, 1)",
+    "checkCategory": ["Overworld", "Npc", "Hidden Village", "ARC"],
+    "itemId": "Ilias_Charm"
+}

@@ -1,0 +1,5 @@
+{
+    "requirements": "Iron_Boots",
+    "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
+    "itemId": "Water_Bombs_15"
+}

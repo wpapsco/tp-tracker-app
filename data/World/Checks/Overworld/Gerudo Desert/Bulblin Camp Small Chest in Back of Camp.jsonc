@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Overworld", "Chest", "Bulblin Camp", "DZX"],
+    "itemId": "Purple_Rupee"
+}

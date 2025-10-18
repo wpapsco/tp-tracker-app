@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatArgorok",
+    "checkCategory": ["Dungeon", "City in The Sky", "Dungeon Reward", "REL", "ARC"],
+    "itemId": "Progressive_Mirror_Shard"
+}

@@ -1,0 +1,5 @@
+{
+    "requirements": "canLaunchBombs",
+    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple", "ARC"],
+    "itemId": "Water_Bombs_10"
+}

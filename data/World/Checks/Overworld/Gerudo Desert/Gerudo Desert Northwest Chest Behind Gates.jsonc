@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatBulblin",
+    "checkCategory": ["Overworld", "Chest", "Gerudo Desert", "ARC"],
+    "itemId": "Red_Rupee"
+}

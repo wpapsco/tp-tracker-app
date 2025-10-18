@@ -1,0 +1,5 @@
+{
+    "requirements": "(Progressive_Dominion_Rod, 2)",
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Eldin Province", "ARC"],
+    "itemId": "Piece_of_Heart"
+}

@@ -1,0 +1,5 @@
+{
+    "requirements": "(Progressive_Clawshot, 2)",
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province", "ARC"],
+    "itemId": "Orange_Rupee"
+}

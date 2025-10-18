@@ -1,0 +1,5 @@
+{
+  "requirements": "Lantern and canCompletePrologue",
+  "checkCategory": [ "Overworld", "Chest", "Faron Woods", "DZX" ],
+  "itemId": "Yellow_Rupee"
+}

@@ -1,0 +1,5 @@
+{
+    "requirements": "Lantern",
+    "checkCategory": ["Overworld", "Chest", "Ordona Province", "DZX"],
+    "itemId": "Purple_Rupee"
+}

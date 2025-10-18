@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Overworld", "Shop", "Ordona Province", "ARC"],
+    "itemId": "Slingshot"
+}

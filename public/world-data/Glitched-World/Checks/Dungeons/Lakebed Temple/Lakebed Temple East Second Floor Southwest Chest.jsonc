@@ -1,0 +1,5 @@
+{
+    "requirements": "true",
+    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
+    "itemId": "Water_Bombs_5"
+}

@@ -1,0 +1,5 @@
+{
+    "requirements": "HasHeavyMod",
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines", "Small Key"],
+    "itemId": "Goron_Mines_Small_Key"
+}

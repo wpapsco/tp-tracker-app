@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatBabaSerpent and canKnockDownHangingBaba",
+    "checkCategory": ["Overworld", "Chest", "Sacred Grove", "DZX"],
+    "itemId": "Piece_of_Heart"
+}

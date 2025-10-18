@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatBubble and CanDefeatFireBubble and CanDefeatIceBubble",
+    "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province", "DZX"],
+    "itemId": "Orange_Rupee"
+}

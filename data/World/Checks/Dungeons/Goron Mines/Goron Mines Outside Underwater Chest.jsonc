@@ -1,0 +1,5 @@
+{
+    "requirements": "(HasSword or CanUseWaterBombs) and Iron_Boots",
+    "checkCategory": ["Chest", "Dungeon", "Goron Mines", "ARC"],
+    "itemId": "Purple_Rupee"
+}

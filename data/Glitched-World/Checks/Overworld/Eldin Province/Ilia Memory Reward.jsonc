@@ -1,0 +1,5 @@
+{
+    "requirements": "Ilias_Charm",
+    "checkCategory": ["Overworld", "Npc", "Kakariko Village"],
+    "itemId": "Horse_Call"
+}

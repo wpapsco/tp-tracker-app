@@ -1,0 +1,5 @@
+{
+    "requirements": "Lantern",
+    "checkCategory": ["Overworld", "Chest", "Sacred Grove", "ARC"],
+    "itemId": "Bombs_30"
+}

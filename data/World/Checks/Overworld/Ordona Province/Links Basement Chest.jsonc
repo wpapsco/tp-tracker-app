@@ -1,0 +1,5 @@
+{
+    "requirements": "Lantern",
+    "checkCategory": ["Overworld", "Chest", "Ordona Province", "ARC"],
+    "itemId": "Purple_Rupee_Links_House"
+}

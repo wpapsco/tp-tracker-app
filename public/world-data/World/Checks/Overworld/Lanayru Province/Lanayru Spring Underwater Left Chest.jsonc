@@ -1,0 +1,5 @@
+{
+    "requirements": "Iron_Boots",
+    "checkCategory": ["Overworld", "Chest", "Lake Hylia", "ARC"],
+    "itemId": "Blue_Rupee"
+}

@@ -1,0 +1,5 @@
+{
+  "requirements": "((Lakebed_Temple_Small_Key, 3) or (Setting.smallKeySettings equals Keysy)) and Iron_Boots and canLaunchBombs",
+  "checkCategory": [ "Chest", "Dungeon", "Lakebed Temple", "ARC" ],
+  "itemId": "Red_Rupee"
+}

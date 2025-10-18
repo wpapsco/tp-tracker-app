@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatBombling or canSmash",
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple"],
+    "itemId": "Red_Rupee"
+}

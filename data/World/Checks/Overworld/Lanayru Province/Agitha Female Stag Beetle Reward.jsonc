@@ -1,0 +1,5 @@
+{
+    "requirements": "Female_Stag_Beetle",
+    "checkCategory": ["Overworld", "Npc", "Castle Town", "Bug Reward"],
+    "itemId": "Orange_Rupee"
+}

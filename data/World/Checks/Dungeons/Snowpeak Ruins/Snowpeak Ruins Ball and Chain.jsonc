@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatDarkhammer",
+    "checkCategory": ["Dungeon", "Snowpeak Ruins", "REL"],
+    "itemId": "Ball_and_Chain"
+}

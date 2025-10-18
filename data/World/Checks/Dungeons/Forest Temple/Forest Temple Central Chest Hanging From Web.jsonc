@@ -1,0 +1,5 @@
+{
+    "requirements": "canCutHangingWeb",
+    "checkCategory": ["Chest", "Dungeon", "Forest Temple", "Dungeon Items", "Compass", "ARC"],
+    "itemId": "Forest_Temple_Compass"
+}
