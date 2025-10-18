@@ -26,8 +26,8 @@ showShopItems: true,
 showHiddenSkills: true,
 showExcludedItems: true,
 showOnlyAvailable: false,
-showItemList: true,
-showCheckItems: true
+showItemList: false,
+showCheckItems: false
 }
 
 
@@ -100,8 +100,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
         showPoes: spoilerLogData.settings.shufflePoes ?? "All",
         showExcludedItems: true,
         showOnlyAvailable: false,
-        showItemList: true,
-        showCheckItems: true
+        showItemList: false,
+        showCheckItems: false
       };
       setFilter(newFilter);
 
@@ -155,8 +155,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       showPoes: saveData.spoilerLog.settings.shufflePoes ?? "All",
       showExcludedItems: true,
       showOnlyAvailable: false,
-      showItemList: true,
-      showCheckItems: true
+      showItemList: false,
+      showCheckItems: false
     };
     setFilter(savedFilter);
 
