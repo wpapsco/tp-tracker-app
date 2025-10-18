@@ -100,7 +100,9 @@ export class RandoLogic {
             showNpcItems: true,
             showSkyCharacters: true,
             showExcludedItems: true,
-            showOnlyAvailable: false
+            showOnlyAvailable: false,
+            showItemList: true,
+            showCheckItems: true
         }
 
         let checklist: Checklist = {}
@@ -262,6 +264,8 @@ export interface CheckFilter {
     showHiddenSkills: boolean;
     showExcludedItems: boolean;
     showOnlyAvailable: boolean;
+    showItemList: boolean;
+    showCheckItems: boolean;
 }
 
 export interface SaveData {

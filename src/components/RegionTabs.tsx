@@ -88,6 +88,16 @@ export function RegionTabs() {
           toggleName: "showOnlyAvailable"
       },
       {
+          emoji: "📦",
+          title: "Show Item List",
+          toggleName: "showItemList"
+      },
+      {
+          emoji: "🏷️",
+          title: "Show Items on Checks",
+          toggleName: "showCheckItems"
+      },
+      {
           emoji: "🐛",
           title: "Show Golden Bugs",
           toggleName: "showGoldenBugs"

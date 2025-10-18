@@ -1,6 +1,8 @@
 'use client';
 
 import { CheckItem } from './CheckItem';
+import { useChecklist } from '@/contexts/ChecklistContext';
+import { Item } from '@/logic';
 
 interface CheckData {
   available: boolean;
@@ -15,6 +17,17 @@ interface RoomCardProps {
 }
 
 export function RoomCard({ roomName, checks, selectedCheckName }: RoomCardProps) {
+  const { spoilerLog } = useChecklist();
+
+  const getItemName = (checkName: string): string | undefined => {
+    if (!spoilerLog) return undefined;
+    const itemEnum = spoilerLog.itemPlacements[checkName];
+    if (itemEnum === undefined) return undefined;
+
+    // Convert Item enum value to string name
+    return Item[itemEnum];
+  };
+
   return (
     <div className="room-card">
       {/* Room Header */}
@@ -31,6 +44,7 @@ export function RoomCard({ roomName, checks, selectedCheckName }: RoomCardProps)
             available={checkData.available}
             checked={checkData.checked}
             selected={checkName === selectedCheckName}
+            itemName={getItemName(checkName)}
           />
         ))}
       </div>

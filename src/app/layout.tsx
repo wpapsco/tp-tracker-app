@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TP Randomizer Tracker",
-  description: "Twilight Princess Randomizer Tracker",
+  title: "TP Randomizer Auto-Checklist",
+  description: "Twilight Princess Randomizer Auto-Checklist",
 };
 
 export default function RootLayout({

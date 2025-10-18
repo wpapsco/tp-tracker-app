@@ -8,10 +8,11 @@ interface CheckItemProps {
   available: boolean;
   checked: boolean;
   selected?: boolean;
+  itemName?: string;
 }
 
-export function CheckItem({ checkName, available, checked, selected = false }: CheckItemProps) {
-  const { toggleCheck } = useChecklist();
+export function CheckItem({ checkName, available, checked, selected = false, itemName }: CheckItemProps) {
+  const { toggleCheck, filter } = useChecklist();
   const elementRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to selected item with padding below
@@ -21,34 +22,46 @@ export function CheckItem({ checkName, available, checked, selected = false }: C
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
+      // Calculate element's position from top of document
+      const elementTopFromDocument = window.scrollY + rect.top;
+
       // Dynamically calculate sticky header height
       const stickyHeader = document.querySelector('.card-header');
       const headerHeight = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
       const TOP_PADDING = 20; // Additional padding below the sticky header
       const BOTTOM_PADDING = 200; // pixels of space to keep below cursor
+      const SCROLL_TO_TOP_THRESHOLD = 400; // If element is within this many pixels from document top, scroll to top
 
       const effectiveTopBoundary = headerHeight + TOP_PADDING;
 
       // Check if element is not in view or obscured by sticky header
       if (rect.bottom > windowHeight - BOTTOM_PADDING || rect.top < effectiveTopBoundary) {
-        // Scroll into view
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
+        // If element is near the top of the document, just scroll all the way to top
+        if (elementTopFromDocument < SCROLL_TO_TOP_THRESHOLD) {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scroll into view
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
 
-        // After scrollIntoView, ensure element isn't behind the sticky header
-        setTimeout(() => {
-          const newRect = element.getBoundingClientRect();
-          if (newRect.top < effectiveTopBoundary) {
-            // Element is behind header, manually adjust scroll
-            const scrollAdjustment = effectiveTopBoundary - newRect.top;
-            window.scrollBy({
-              top: -scrollAdjustment,
-              behavior: 'smooth'
-            });
-          }
-        }, 100); // Small delay to let scrollIntoView settle
+          // After scrollIntoView, ensure element isn't behind the sticky header
+          setTimeout(() => {
+            const newRect = element.getBoundingClientRect();
+            if (newRect.top < effectiveTopBoundary) {
+              // Element is behind header, manually adjust scroll
+              const scrollAdjustment = effectiveTopBoundary - newRect.top;
+              window.scrollBy({
+                top: -scrollAdjustment,
+                behavior: 'smooth'
+              });
+            }
+          }, 100); // Small delay to let scrollIntoView settle
+        }
       }
     }
   }, [selected]);
@@ -85,7 +98,12 @@ export function CheckItem({ checkName, available, checked, selected = false }: C
           className="checkbox-input-hidden"
         />
         <span className={getTextClasses()}>
-          {checkName}
+          <span className={checked ? 'check-name-strikethrough' : ''}>
+            {checkName.replace(/_/g, ' ')}
+          </span>
+          {checked && itemName && filter.showCheckItems && (
+            <span className="check-item-reward"> → {itemName.replace(/_/g, ' ')}</span>
+          )}
         </span>
       </label>
     </div>

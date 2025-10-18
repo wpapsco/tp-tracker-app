@@ -24,8 +24,12 @@ body {
 /* Component Styles */
 @layer components {
   /* Layout Components */
+  .tracker-layout {
+    @apply flex flex-col lg:flex-row gap-4 min-h-screen bg-gray-100 dark:bg-gray-800 p-4;
+  }
+
   .app-container {
-    @apply min-h-screen bg-gray-100 dark:bg-gray-800 p-4;
+    @apply flex-1 bg-gray-100 dark:bg-gray-800 min-w-0;
   }
 
   .card {
@@ -195,7 +199,7 @@ body {
   }
 
   .check-item-checked {
-    @apply line-through opacity-60;
+    /* Opacity removed - now applied only to check name via .check-name-strikethrough */
   }
 
   .checkbox-visual {
@@ -216,6 +220,75 @@ body {
 
   .checkbox-input-hidden {
     @apply hidden;
+  }
+
+  .check-item-reward {
+    @apply text-blue-600 dark:text-blue-400 font-semibold ml-2;
+  }
+
+  .check-name-strikethrough {
+    @apply line-through opacity-60;
+  }
+
+  /* Item List Components */
+  .item-list-container {
+    @apply w-full lg:w-80 flex-shrink-0 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4;
+    @apply border-2 border-black dark:border-gray-500;
+    @apply overflow-y-auto;
+  }
+
+  @media (min-width: 1024px) {
+    .item-list-container {
+      position: sticky;
+      top: 1rem;
+      align-self: flex-start;
+      max-height: calc(100vh - 2rem);
+    }
+  }
+
+  .item-list-title {
+    @apply text-xl font-bold mb-4 text-gray-900 dark:text-gray-100;
+    @apply border-b-2 border-gray-300 dark:border-gray-600 pb-2;
+  }
+
+  .item-list-content {
+    @apply space-y-2;
+  }
+
+  .item-list-entry {
+    @apply flex items-center justify-between px-3 py-2 rounded;
+    @apply bg-gray-50 dark:bg-gray-700;
+    @apply border border-gray-200 dark:border-gray-600;
+  }
+
+  .item-list-name {
+    @apply text-base font-medium text-gray-800 dark:text-gray-200;
+  }
+
+  .item-list-count {
+    @apply text-sm font-bold px-2 py-1 rounded;
+    @apply bg-indigo-500 text-white dark:bg-indigo-600;
+  }
+
+  .item-list-empty {
+    @apply text-center text-gray-500 dark:text-gray-400 py-8 text-base;
+  }
+
+  /* Scrollbar styling for item list */
+  .item-list-container::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .item-list-container::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-700 rounded;
+  }
+
+  .item-list-container::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded;
+  }
+
+  .item-list-container::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500 dark:bg-gray-500;
   }
 
   /* Upload Components */

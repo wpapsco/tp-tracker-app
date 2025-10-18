@@ -13,6 +13,8 @@ interface ChecklistContextType {
   filter: CheckFilter;
   setFilter: (filter: CheckFilter) => void;
   isGoMode: boolean;
+  heldItems: {[key: string]: number};
+  spoilerLog: SpoilerLog | null;
 }
 
 const defaultFilter: CheckFilter = {
@@ -23,7 +25,9 @@ showNpcItems: true,
 showShopItems: true,
 showHiddenSkills: true,
 showExcludedItems: true,
-showOnlyAvailable: false
+showOnlyAvailable: false,
+showItemList: true,
+showCheckItems: true
 }
 
 
@@ -36,6 +40,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
   const [logic, setLogic] = useState<RandoLogic | null>(null);
   const [filter, setFilter] = useState<CheckFilter>(defaultFilter);
   const [isGoMode, setIsGoMode] = useState<boolean>(false);
+  const [heldItems, setHeldItems] = useState<{[key: string]: number}>({});
+  const [spoilerLog, setSpoilerLog] = useState<SpoilerLog | null>(null);
 
   useEffect(() => {
       loadWorldData().then(() => loadSaveData())
@@ -49,10 +55,11 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
     }
   }, [filter, logic])
 
-  // Update GO MODE state whenever logic changes
+  // Update GO MODE state and held items whenever logic changes
   useEffect(() => {
     if (logic) {
       setIsGoMode(logic.isGoMode());
+      setHeldItems(logic.getHeldItems());
     }
   }, [logic, checklist])
 
@@ -73,7 +80,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       }
   }
 
-  const loadSpoilerLog = (spoilerLog: SpoilerLog) => {
+  const loadSpoilerLog = (spoilerLogData: SpoilerLog) => {
     try {
       console.log("loading spoiler log")
       if (!worldData) {
@@ -81,20 +88,24 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
         return;
       }
 
+      setSpoilerLog(spoilerLogData);
+
       // Initialize filter from spoiler log settings
       const newFilter: CheckFilter = {
-        showGoldenBugs: spoilerLog.settings.shuffleGoldenBugs ?? true,
+        showGoldenBugs: spoilerLogData.settings.shuffleGoldenBugs ?? true,
         showSkyCharacters: true, // Always true by default
         showNpcItems: true, // Always true by default
         showShopItems: true, // Always true by default
         showHiddenSkills: true, // Always true by default
-        showPoes: spoilerLog.settings.shufflePoes ?? "All",
-        showExcludedItems: (spoilerLog.settings.excludedChecks?.length ?? 0) > 0 ? true : true,
-        showOnlyAvailable: false
+        showPoes: spoilerLogData.settings.shufflePoes ?? "All",
+        showExcludedItems: true,
+        showOnlyAvailable: false,
+        showItemList: true,
+        showCheckItems: true
       };
       setFilter(newFilter);
 
-      const newLogic = new RandoLogic(spoilerLog, worldData);
+      const newLogic = new RandoLogic(spoilerLogData, worldData);
       console.log("made new logic")
       setLogic(newLogic);
       const checklistData = newLogic.getAllChecks(newFilter);
@@ -132,6 +143,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
     if (!loadedData || !worldData) return;
     const saveData = (JSON.parse(loadedData) as SaveData)
 
+    setSpoilerLog(saveData.spoilerLog);
+
     // Restore filter from saved spoiler log settings
     const savedFilter: CheckFilter = {
       showGoldenBugs: saveData.spoilerLog.settings.shuffleGoldenBugs ?? true,
@@ -140,8 +153,10 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       showShopItems: true, // Always true by default
       showHiddenSkills: true, // Always true by default
       showPoes: saveData.spoilerLog.settings.shufflePoes ?? "All",
-      showExcludedItems: (saveData.spoilerLog.settings.excludedChecks?.length ?? 0) > 0 ? true : true,
-      showOnlyAvailable: false
+      showExcludedItems: true,
+      showOnlyAvailable: false,
+      showItemList: true,
+      showCheckItems: true
     };
     setFilter(savedFilter);
 
@@ -161,7 +176,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <ChecklistContext.Provider value={{ checklist, selectedRegion, setSelectedRegion, toggleCheck, loadSpoilerLog, filter, setFilter, isGoMode }}>
+    <ChecklistContext.Provider value={{ checklist, selectedRegion, setSelectedRegion, toggleCheck, loadSpoilerLog, filter, setFilter, isGoMode, heldItems, spoilerLog }}>
       {children}
     </ChecklistContext.Provider>
   );
