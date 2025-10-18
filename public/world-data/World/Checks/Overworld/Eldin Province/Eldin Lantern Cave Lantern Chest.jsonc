@@ -1,5 +1,0 @@
-{
-    "requirements": "Lantern",
-    "checkCategory": ["Overworld", "Chest", "Eldin Lantern Cave", "ARC"],
-    "itemId": "Piece_of_Heart"
-}

@@ -1,5 +1,0 @@
-{
-    "requirements": "canCompleteTempleofTime",
-    "checkCategory": ["Overworld", "Npc", "Kakariko Village", "ARC"],
-    "itemId": "Renados_Letter"
-}

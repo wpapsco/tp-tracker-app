@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Required for deploying to github.io/repo-name
+  // For deploying to github.io/tp-tracker-app
   basePath: '/tp-tracker-app',
   assetPrefix: '/tp-tracker-app',
 };

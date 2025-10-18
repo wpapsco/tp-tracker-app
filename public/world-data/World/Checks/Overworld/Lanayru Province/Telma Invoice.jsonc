@@ -1,5 +1,0 @@
-{
-    "requirements": "Renados_Letter",
-    "checkCategory": ["Overworld", "Npc", "Castle Town", "ARC"],
-    "itemId": "Invoice"
-}

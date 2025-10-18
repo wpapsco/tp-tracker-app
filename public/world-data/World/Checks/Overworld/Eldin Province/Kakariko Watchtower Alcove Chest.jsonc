@@ -1,5 +1,0 @@
-{
-    "requirements": "canSmash",
-    "checkCategory": ["Overworld", "Chest", "Kakariko Village", "ARC"],
-    "itemId": "Orange_Rupee"
-}

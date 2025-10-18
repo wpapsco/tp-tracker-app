@@ -22,7 +22,8 @@ showSkyCharacters: true,
 showNpcItems: true,
 showShopItems: true,
 showHiddenSkills: true,
-showExcludedItems: true
+showExcludedItems: true,
+showOnlyAvailable: false
 }
 
 
@@ -57,7 +58,9 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
 
   const loadWorldData = async () => {
       // Fetch rooms and checks data from static JSON file
-      const response = await fetch('/world-data.json');
+      // Use relative path to work with basePath in GitHub Pages deployment
+      const basePath = '/tp-tracker-app';
+      const response = await fetch(`${basePath}/world-data.json`);
   
       if (!response.ok) {
         throw new Error('Failed to fetch world data');
@@ -86,7 +89,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
         showShopItems: true, // Always true by default
         showHiddenSkills: true, // Always true by default
         showPoes: spoilerLog.settings.shufflePoes ?? "All",
-        showExcludedItems: (spoilerLog.settings.excludedChecks?.length ?? 0) > 0 ? true : true
+        showExcludedItems: (spoilerLog.settings.excludedChecks?.length ?? 0) > 0 ? true : true,
+        showOnlyAvailable: false
       };
       setFilter(newFilter);
 
@@ -136,7 +140,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       showShopItems: true, // Always true by default
       showHiddenSkills: true, // Always true by default
       showPoes: saveData.spoilerLog.settings.shufflePoes ?? "All",
-      showExcludedItems: (saveData.spoilerLog.settings.excludedChecks?.length ?? 0) > 0 ? true : true
+      showExcludedItems: (saveData.spoilerLog.settings.excludedChecks?.length ?? 0) > 0 ? true : true,
+      showOnlyAvailable: false
     };
     setFilter(savedFilter);
 

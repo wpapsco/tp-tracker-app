@@ -1,5 +1,0 @@
-{
-    "requirements": "(Poe_Soul, 60)",
-    "checkCategory": ["Overworld", "Npc", "Castle Town", "ARC"],
-    "itemId": "Silver_Rupee"
-}

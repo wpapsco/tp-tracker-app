@@ -73,20 +73,20 @@ function loadChecksFromDirectory(dir: string): CheckEntry[] {
 
 // Load all World rooms
 export function loadWorldRooms(): RoomEntry[] {
-    return loadRoomsFromDirectory(join(process.cwd(), 'public', 'world-data', 'World', 'Rooms'));
+    return loadRoomsFromDirectory(join(process.cwd(), 'data', 'World', 'Rooms'));
 }
 
 export function loadWorldChecks(): CheckEntry[] {
-    return loadChecksFromDirectory(join(process.cwd(), 'public', 'world-data', 'World', 'Checks'))
+    return loadChecksFromDirectory(join(process.cwd(), 'data', 'World', 'Checks'))
 }
 
 // Load all Glitched-World rooms
 export function loadGlitchedWorldRooms(): RoomEntry[] {
-    return loadRoomsFromDirectory(join(process.cwd(), 'public', 'world-data', 'Glitched-World', 'Rooms'));
+    return loadRoomsFromDirectory(join(process.cwd(), 'data', 'Glitched-World', 'Rooms'));
 }
 
 export function loadGlitchedWorldChecks(): CheckEntry[] {
-    return loadChecksFromDirectory(join(process.cwd(), 'public', 'world-data', 'Glitched-World', 'Checks'))
+    return loadChecksFromDirectory(join(process.cwd(), 'data', 'Glitched-World', 'Checks'))
 }
 
 export function loadWorldData(): WorldData {

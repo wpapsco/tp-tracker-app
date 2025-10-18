@@ -1,5 +1,0 @@
-{
-    "requirements": "canPressMinesSwitch and canBreakWoodenDoor",
-    "checkCategory": ["Chest", "Dungeon", "Goron Mines", "ARC"],
-    "itemId": "Red_Rupee"
-}

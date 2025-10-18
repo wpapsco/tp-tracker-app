@@ -1,5 +1,0 @@
-{
-  "requirements": "canCompletePrologue",
-  "checkCategory": [ "Overworld", "Npc", "Faron Woods", "ARC" ],
-  "itemId": "Coro_Bottle"
-}

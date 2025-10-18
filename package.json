@@ -7,9 +7,10 @@
     "prebuild": "npm run generate:world-data",
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && gh-pages -d out -t true",
+    "deploy": "gh-pages -d out --dotfiles --add",
     "generate:world-data": "tsx scripts/generate-world-data.ts",
-    "test:spheres": "tsx src/logic/test-spheres.ts"
+    "test:spheres": "tsx src/logic/test-spheres.ts",
+    "preview": "npx serve out"
   },
   "dependencies": {
     "next": "^15.5.6",

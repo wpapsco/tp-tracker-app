@@ -64,13 +64,16 @@ export function RegionTabs() {
   // Scroll selected tab into view
   useEffect(() => {
     if (selectedRegion && tabRefs.current[selectedRegion]) {
-      tabRefs.current[selectedRegion]?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
+      // Use requestAnimationFrame to ensure DOM has updated before scrolling
+      requestAnimationFrame(() => {
+        tabRefs.current[selectedRegion]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center',
+        });
       });
     }
-  }, [selectedRegion]);
+  }, [selectedRegion, checklist, filter.showOnlyAvailable]);
 
   type ToggleElement = {
       emoji: string,
@@ -79,6 +82,11 @@ export function RegionTabs() {
   }
 
   const toggleButtons: ToggleElement[] = [
+      {
+          emoji: "✓",
+          title: "Show Only Available Checks",
+          toggleName: "showOnlyAvailable"
+      },
       {
           emoji: "🐛",
           title: "Show Golden Bugs",
@@ -160,19 +168,33 @@ export function RegionTabs() {
       {/* Region Tabs - Only show when data is loaded */}
       {hasData && (
         <div className="region-tabs-container">
-          {orderedNames.filter(region => allRegions.includes(region)).map((region) => {
-            const availableCount = getAvailableCount(region);
-            return (
-              <button
-                key={region}
-                ref={(el) => { tabRefs.current[region] = el; }}
-                onClick={() => setSelectedRegion(region)}
-                className={`region-tab ${selectedRegion === region ? 'region-tab-active' : ''}`}
-              >
-                {region} ({availableCount})
-              </button>
-            );
-          })}
+          {orderedNames
+            .filter(region => allRegions.includes(region))
+            .filter(region => {
+              // If showOnlyAvailable is enabled, hide tabs with no available checks
+              // BUT always keep the currently selected region visible
+              if (filter.showOnlyAvailable) {
+                // Always show the currently selected region
+                if (region === selectedRegion) return true;
+
+                const availableCount = getAvailableCount(region);
+                return availableCount > 0;
+              }
+              return true;
+            })
+            .map((region) => {
+              const availableCount = getAvailableCount(region);
+              return (
+                <button
+                  key={region}
+                  ref={(el) => { tabRefs.current[region] = el; }}
+                  onClick={() => setSelectedRegion(region)}
+                  className={`region-tab ${selectedRegion === region ? 'region-tab-active' : ''}`}
+                >
+                  {region} ({availableCount})
+                </button>
+              );
+            })}
         </div>
       )}
     </div>

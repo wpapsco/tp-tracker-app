@@ -1,5 +1,0 @@
-{
-    "requirements": "Lantern",
-    "checkCategory": ["Chest", "Dungeon", "Forest Temple", "Dungeon Items", "Dungeon Map", "ARC"],
-    "itemId": "Forest_Temple_Dungeon_Map"
-}

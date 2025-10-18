@@ -99,7 +99,8 @@ export class RandoLogic {
             showShopItems: true,
             showNpcItems: true,
             showSkyCharacters: true,
-            showExcludedItems: true
+            showExcludedItems: true,
+            showOnlyAvailable: false
         }
 
         let checklist: Checklist = {}
@@ -112,11 +113,17 @@ export class RandoLogic {
             room.Checks.forEach(checkName => {
                 const check = this.loadedChecks[checkName]
                 if (!check || !this.shouldShowCheck(check, filter)) return;
+                const isAvailable =
+                    this.itemState.openRooms.includes(room.RoomName) &&
+                    check.parsedRequirements ? check.parsedRequirements(this.itemState) : false;
+                const isChecked = this.checkedChecks.has(checkName);
+
+                // Skip unavailable checks if showOnlyAvailable is true
+                if (filter.showOnlyAvailable && !isAvailable && !isChecked) return;
+
                 checklistRoom[checkName] = {
-                    available: 
-                        this.itemState.openRooms.includes(room.RoomName) && 
-                        check.parsedRequirements ? check.parsedRequirements(this.itemState) : false,
-                    checked: this.checkedChecks.has(checkName),
+                    available: isAvailable,
+                    checked: isChecked,
                     category: check.checkCategory
                 }
             })
@@ -254,6 +261,7 @@ export interface CheckFilter {
     showShopItems: boolean;
     showHiddenSkills: boolean;
     showExcludedItems: boolean;
+    showOnlyAvailable: boolean;
 }
 
 export interface SaveData {

@@ -1,5 +1,0 @@
-{
-    "requirements": "canSmash and Lantern",
-    "checkCategory": ["Overworld", "Chest", "Lake Lantern Cave", "ARC"],
-    "itemId": "Seeds_50"
-}

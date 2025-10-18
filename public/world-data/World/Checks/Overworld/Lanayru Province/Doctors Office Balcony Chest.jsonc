@@ -1,5 +1,0 @@
-{
-    "requirements": "true",
-    "checkCategory": ["Overworld", "Chest", "Castle Town", "ARC"],
-    "itemId": "Red_Rupee"
-}

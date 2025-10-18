@@ -1,5 +1,0 @@
-{
-    "requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal",
-    "checkCategory": ["Chest", "Dungeon", "City in The Sky", "ARC"],
-    "itemId": "Red_Rupee"
-}

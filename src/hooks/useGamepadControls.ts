@@ -15,10 +15,37 @@ interface CheckItem {
 }
 
 export function useGamepadControls() {
-  const { checklist, selectedRegion, setSelectedRegion, toggleCheck } = useChecklist();
+  const { checklist, selectedRegion, setSelectedRegion, toggleCheck, filter } = useChecklist();
   const [selectedCheckIndex, setSelectedCheckIndex] = useState(0);
   const [flatChecks, setFlatChecks] = useState<CheckItem[]>([]);
   const [selectedCheckName, setSelectedCheckName] = useState<string | null>(null);
+
+  // Get visible regions based on filter
+  const getVisibleRegions = () => {
+    if (!filter.showOnlyAvailable) {
+      return orderedNames.filter(region => checklist[region]);
+    }
+
+    // Filter to only show regions with available checks, but always include current region
+    const visibleRegions = orderedNames.filter(region => {
+      const rooms = checklist[region];
+      if (!rooms) return false;
+
+      // Always include the currently selected region
+      if (region === selectedRegion) return true;
+
+      // Check if region has any available checks
+      let hasAvailable = false;
+      Object.values(rooms).forEach(room => {
+        Object.values(room).forEach((check: any) => {
+          if (check.available && !check.checked) hasAvailable = true;
+        });
+      });
+      return hasAvailable;
+    });
+
+    return visibleRegions;
+  };
 
   // Track previous button states and last action time for key repeat
   const prevButtonsRef = useRef<{ [key: number]: boolean }>({});
@@ -91,7 +118,7 @@ export function useGamepadControls() {
 
       // Shoulder buttons for tab navigation (LB = button 4, RB = button 5)
       if (buttons[4]?.pressed && !prevButtonsRef.current[4]) {
-        const regions = orderedNames;
+        const regions = getVisibleRegions();
         const currentIndex = regions.indexOf(selectedRegion);
         if (currentIndex > 0) {
           setSelectedRegion(regions[currentIndex - 1]);
@@ -99,7 +126,7 @@ export function useGamepadControls() {
       }
 
       if (buttons[5]?.pressed && !prevButtonsRef.current[5]) {
-        const regions = orderedNames;
+        const regions = getVisibleRegions();
         const currentIndex = regions.indexOf(selectedRegion);
         if (currentIndex < regions.length - 1) {
           setSelectedRegion(regions[currentIndex + 1]);
@@ -235,7 +262,7 @@ export function useGamepadControls() {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [checklist, selectedRegion, selectedCheckIndex, flatChecks, toggleCheck, setSelectedRegion]);
+  }, [checklist, selectedRegion, selectedCheckIndex, flatChecks, toggleCheck, setSelectedRegion, filter]);
 
   return {
     selectedCheckIndex,
