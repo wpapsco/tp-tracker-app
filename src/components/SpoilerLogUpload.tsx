@@ -15,6 +15,9 @@ export function SpoilerLogUpload() {
     try {
       const text = await file.text();
       const spoilerLogData = JSON.parse(text);
+      if (spoilerLogData.version != "s1.2.0") {
+        alert("This tracker only supports 1.2.0")
+      }
 
       // Convert item placement strings to Item enum values
       const itemPlacements: { [checkName: string]: Item } = {};

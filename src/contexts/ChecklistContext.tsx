@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { type Checklist, type SpoilerLog, CheckEntry, Checks, Item, RoomEntry, Rooms } from '@/logic';
-import { RandoLogic, SaveData, WorldData } from '@/logic/RandoLogic';
+import { CheckFilter, RandoLogic, SaveData, WorldData } from '@/logic/RandoLogic';
 
 // Sample checklist data for demonstration (fallback if RandoLogic isn't available)
 const sampleChecklist: Checklist = {
@@ -128,7 +128,20 @@ interface ChecklistContextType {
   setSelectedRegion: (region: string) => void;
   toggleCheck: (checkName: string) => void;
   loadSpoilerLog: (spoilerLog: SpoilerLog) => void;
+  filter: CheckFilter;
+  setFilter: (filter: CheckFilter) => void;
 }
+
+const defaultFilter: CheckFilter = {
+showPoes: "All",
+showGoldenBugs: true,
+showSkyCharacters: true,
+showNpcItems: true,
+showShopItems: true,
+showHiddenSkills: true,
+showExcludedItems: true
+}
+
 
 const ChecklistContext = createContext<ChecklistContextType | undefined>(undefined);
 
@@ -137,6 +150,8 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
   const [checklist, setChecklist] = useState<Checklist>(sampleChecklist);
   const [selectedRegion, setSelectedRegion] = useState<string>('Ordona Province');
   const [logic, setLogic] = useState<RandoLogic | null>(null);
+  const [filter, setFilter] = useState<CheckFilter>(defaultFilter)
+
   {/* let rooms: RoomEntry[] = [] */}
   {/* let checks: CheckEntry[] = [] */}
 
@@ -180,7 +195,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       const newLogic = new RandoLogic(spoilerLog, worldData);
       console.log("made new logic")
       setLogic(newLogic);
-      const checklistData = newLogic.getAllChecks();
+      const checklistData = newLogic.getAllChecks(filter);
       setChecklist(checklistData);
       console.log("set checklist")
 
@@ -198,7 +213,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
   const toggleCheck = (checkName: string) => {
     if (logic) {
       logic.toggleCheck(checkName);
-      const updatedChecklist = logic.getAllChecks();
+      const updatedChecklist = logic.getAllChecks(filter);
       setChecklist(updatedChecklist);
       save()
     } else {
@@ -235,7 +250,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
     const saveData = (JSON.parse(loadedData) as SaveData)
     const newLogic = RandoLogic.fromSaveData(worldData, saveData)
     setLogic(newLogic)
-    const checklistData = newLogic.getAllChecks()
+    const checklistData = newLogic.getAllChecks(filter)
     console.log(checklistData)
     setChecklist(checklistData)
     const regions = Object.keys(checklistData);
@@ -260,7 +275,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ChecklistContext.Provider value={{ checklist, selectedRegion, setSelectedRegion, toggleCheck, loadSpoilerLog }}>
+    <ChecklistContext.Provider value={{ checklist, selectedRegion, setSelectedRegion, toggleCheck, loadSpoilerLog, filter, setFilter }}>
       {children}
     </ChecklistContext.Provider>
   );

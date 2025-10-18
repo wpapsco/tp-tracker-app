@@ -235,7 +235,7 @@ export class RandoLogic {
     }
 }
 
-interface CheckFilter {
+export interface CheckFilter {
     showPoes: "Vanilla" | "Dungeons" | "Overworld" | "All";
     showGoldenBugs: boolean;
     showSkyCharacters: boolean;
