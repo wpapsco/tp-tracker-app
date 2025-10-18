@@ -23,7 +23,7 @@ export class RandoLogic {
         if (this.settings.logicRules == "Glitched") {
             rooms = this.worldData.glitchedRooms
             checks = this.worldData.glitchedChecks
-        } 
+        }
 
         // Load rooms from provided data
         rooms.forEach(entry => {
@@ -38,6 +38,17 @@ export class RandoLogic {
         this.parser = getParser(this.settings, this.loadedRooms)
         this.parseExitRequirements()
         this.parseCheckRequirements()
+
+        // Process starting items from settings
+        if (this.settings.startingItems && Array.isArray(this.settings.startingItems)) {
+            this.settings.startingItems.forEach((itemName: string) => {
+                if (itemName in Item) {
+                    const item = Item[itemName as keyof typeof Item];
+                    this.unlockItem(item);
+                }
+            });
+        }
+
         this.findOpenRooms()
     }
 

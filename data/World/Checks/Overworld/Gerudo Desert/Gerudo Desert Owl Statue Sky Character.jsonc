@@ -1,0 +1,5 @@
+{
+    "requirements": "(Progressive_Dominion_Rod, 2)",
+    "checkCategory": ["Overworld", "Gerudo Desert", "Sky Book"],
+    "itemId": "Progressive_Sky_Book"
+}

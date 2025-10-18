@@ -9,9 +9,9 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Uncomment these if deploying to github.io/repo-name (not a custom domain)
-  // basePath: '/tp-tracker-app',
-  // assetPrefix: '/tp-tracker-app',
+  // Required for deploying to github.io/repo-name
+  basePath: '/tp-tracker-app',
+  assetPrefix: '/tp-tracker-app',
 };
 
 export default nextConfig;

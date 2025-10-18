@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatOok",
+    "checkCategory": ["Forest Temple", "Dungeon", "Boss"],
+    "itemId": "Boomerang"
+}

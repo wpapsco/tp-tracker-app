@@ -1,0 +1,5 @@
+{
+    "requirements": "CanDefeatBokoblin and CanDefeatLizalfos and (Progressive_Clawshot, 1)",
+    "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "Dungeon Items", "Compass", "ARC"],
+    "itemId": "Hyrule_Castle_Compass"
+}

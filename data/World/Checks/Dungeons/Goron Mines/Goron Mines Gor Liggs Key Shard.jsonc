@@ -1,0 +1,5 @@
+{
+    "requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+    "checkCategory": ["Npc", "Dungeon", "Goron Mines", "Dungeon Items", "Big Key", "ARC"],
+    "itemId": "Goron_Mines_Key_Shard"
+}

@@ -16,14 +16,14 @@ interface RoomCardProps {
 
 export function RoomCard({ roomName, checks, selectedCheckName }: RoomCardProps) {
   return (
-    <div className="border-2 border-black">
+    <div className="room-card">
       {/* Room Header */}
-      <div className="bg-blue-600 p-3 border-b-2 border-black">
-        <h3 className="font-bold text-lg text-white">{roomName}</h3>
+      <div className="room-card-header">
+        <h3 className="room-card-title">{roomName}</h3>
       </div>
 
       {/* Checks */}
-      <div className="p-4 bg-gray-50">
+      <div className="room-card-content">
         {Object.entries(checks).map(([checkName, checkData]) => (
           <CheckItem
             key={checkName}

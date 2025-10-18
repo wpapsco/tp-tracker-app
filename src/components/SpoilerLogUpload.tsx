@@ -41,17 +41,17 @@ export function SpoilerLogUpload() {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="upload-container">
       <input
         ref={fileInputRef}
         type="file"
         accept=".json"
         onChange={handleFileUpload}
-        className="hidden"
+        className="upload-input-hidden"
       />
       <button
         onClick={() => fileInputRef.current?.click()}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+        className="btn-upload"
       >
         Upload Spoiler Log
       </button>

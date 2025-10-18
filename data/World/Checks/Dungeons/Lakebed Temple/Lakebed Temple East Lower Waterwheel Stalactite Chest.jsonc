@@ -1,0 +1,5 @@
+{
+    "requirements": "canLaunchBombs",
+    "checkCategory": ["Chest", "Dungeon", "Lakebed Temple", "Small Key", "ARC"],
+    "itemId": "Lakebed_Temple_Small_Key"
+}

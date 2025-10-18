@@ -1,10 +1,11 @@
 'use client';
 
 import { useChecklist } from '@/contexts/ChecklistContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { SpoilerLogUpload } from './SpoilerLogUpload';
 import { sortRegions } from '@/utils/regionOrder';
-import { useEffect, useRef, useState } from 'react';
-import {CheckFilter} from '@/logic/RandoLogic';
+import { useEffect, useRef } from 'react';
+import type { CheckFilter } from '@/logic/RandoLogic';
 
 
 export const orderedNames = [
@@ -32,18 +33,19 @@ export const orderedNames = [
     "City in The Sky",
     "Palace of Twilight",
     "Hyrule Castle",
-    "Ganondorf",
 ]
 
 export function RegionTabs() {
-  const { checklist, selectedRegion, setSelectedRegion } = useChecklist();
+  const { checklist, selectedRegion, setSelectedRegion, filter, setFilter } = useChecklist();
+  const { theme, toggleTheme } = useTheme();
   const allRegions = Object.keys(checklist);
   const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
-  console.log(allRegions);
+  const hasData = allRegions.length > 0;
 
   // Count unchecked available checks for each region
   const getAvailableCount = (region: string) => {
     const rooms = checklist[region];
+    if (!rooms) return 0;
     let count = 0;
     Object.values(rooms).forEach(room => {
       Object.values(room).forEach(check => {
@@ -51,22 +53,12 @@ export function RegionTabs() {
       });
     });
     return count;
-  };
-
-  const defaultFilter: CheckFilter = {
-    showPoes: "All",
-    showGoldenBugs: true,
-    showSkyCharacters: true,
-    showNpcItems: true,
-    showShopItems: true,
-    showHiddenSkills: true,
-    showExcludedItems: true
   }
 
-  const [filter, setFilter] = useState(defaultFilter)
-
+  // Only set selected region when we have data
   useEffect(() => {
-    setSelectedRegion(orderedNames[0]);
+      // setSelectedRegion(orderedNames.find(name => allRegions.includes(name)) || allRegions[0]);
+    setSelectedRegion(orderedNames[0])
   }, [])
 
   // Scroll selected tab into view
@@ -120,42 +112,69 @@ export function RegionTabs() {
   ]
 
   return (
-    <div className="sticky top-0 z-10 bg-white flex flex-col gap-2 p-4 border-b">
+    <div className="card-header">
       {/* Top row: Settings Icon and Upload Button */}
-      <div className="flex items-center justify-between">
-        <div>
-            {toggleButtons.map(e => 
-            <button 
-                className={"p-2 " + (filter[e.toggleName] ? "bg-indigo-500" : "bg-indigo-100") + " hover:bg-gray-100 rounded" }
-                title={e.title} 
-                onClick={() => setFilter({...filter, [e.toggleName]: !filter[e.toggleName] })}>
-                {e.emoji}
-            </button>
-            )}
+      <div className="header-row">
+        {hasData ? (
+          <div className="header-controls">
+            <div className="filter-buttons-group">
+              {toggleButtons.map(e =>
+                <button
+                  key={e.toggleName}
+                  className={`btn-icon ${filter[e.toggleName] ? 'btn-icon-active' : 'btn-icon-inactive'}`}
+                  title={e.title}
+                  onClick={() => setFilter({...filter, [e.toggleName]: !filter[e.toggleName] })}>
+                  {e.emoji}
+                </button>
+              )}
+            </div>
+            <div className="poe-filter-group">
+              <span className="poe-filter-label">👻 Poes:</span>
+              <select
+                value={filter.showPoes}
+                onChange={(e) => setFilter({...filter, showPoes: e.target.value as "Vanilla" | "Dungeons" | "Overworld" | "All"})}
+                className="dropdown-select"
+              >
+                <option value="All">All</option>
+                <option value="Dungeons">Dungeons</option>
+                <option value="Overworld">Overworld</option>
+                <option value="Vanilla">Vanilla (None)</option>
+              </select>
+            </div>
+          </div>
+        ) : (
+          <div className="no-data-message">Please upload a spoiler log to begin</div>
+        )}
+        <div className="header-actions">
+          <button
+            onClick={toggleTheme}
+            className="btn-icon"
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+          <SpoilerLogUpload />
         </div>
-        <SpoilerLogUpload />
       </div>
 
-      {/* Region Tabs - Scrollable */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-        {orderedNames.map((region) => {
-          const availableCount = getAvailableCount(region);
-          return (
-            <button
-              key={region}
-              ref={(el) => { tabRefs.current[region] = el; }}
-              onClick={() => setSelectedRegion(region)}
-              className={`px-4 py-2 border-2 border-black font-semibold whitespace-nowrap flex-shrink-0 ${
-                selectedRegion === region
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white text-black hover:bg-gray-100'
-              }`}
-            >
-              {region} ({availableCount})
-            </button>
-          );
-        })}
-      </div>
+      {/* Region Tabs - Only show when data is loaded */}
+      {hasData && (
+        <div className="region-tabs-container">
+          {orderedNames.filter(region => allRegions.includes(region)).map((region) => {
+            const availableCount = getAvailableCount(region);
+            return (
+              <button
+                key={region}
+                ref={(el) => { tabRefs.current[region] = el; }}
+                onClick={() => setSelectedRegion(region)}
+                className={`region-tab ${selectedRegion === region ? 'region-tab-active' : ''}`}
+              >
+                {region} ({availableCount})
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

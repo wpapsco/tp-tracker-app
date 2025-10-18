@@ -1,0 +1,5 @@
+{
+    "requirements": "canSmash and Iron_Boots",
+    "checkCategory": ["Overworld", "Chest", "Kakariko Village", "ARC"],
+    "itemId": "Piece_of_Heart"
+}

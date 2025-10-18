@@ -30,6 +30,7 @@ export function useGamepadControls() {
   useEffect(() => {
     const checks: CheckItem[] = [];
     const currentRegionData = selectedRegion ? checklist[selectedRegion] : {};
+    if (!currentRegionData) return;
 
     const rooms = Object.entries(currentRegionData).filter(([_, roomChecks]) =>
       Object.keys(roomChecks).length > 0

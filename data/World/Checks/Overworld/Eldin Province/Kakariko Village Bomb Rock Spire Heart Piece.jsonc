@@ -1,0 +1,5 @@
+{
+    "requirements": "hasBombs and Boomerang",
+    "checkCategory": ["Overworld", "Chest", "Kakariko Village", "DZX"],
+    "itemId": "Piece_of_Heart"
+}
