@@ -6,6 +6,7 @@ import { RoomCard } from '@/components/RoomCard';
 import { useGamepadControls } from '@/hooks/useGamepadControls';
 import { GoModeIndicator } from '@/components/GoModeIndicator';
 import { ItemList } from '@/components/ItemList';
+import { InfoDisclaimer } from '@/components/InfoDisclaimer';
 
 export function TrackerContent() {
   const { checklist, selectedRegion, isGoMode } = useChecklist();
@@ -56,6 +57,9 @@ export function TrackerContent() {
 
       {/* GO MODE Indicator - Fixed to viewport */}
       <GoModeIndicator isGoMode={isGoMode} />
+
+      {/* Info Disclaimer - Fixed to bottom-right corner */}
+      <InfoDisclaimer />
     </>
   );
 }

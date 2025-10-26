@@ -101,6 +101,12 @@ export function useGamepadControls() {
     let animationFrameId: number;
 
     const pollGamepads = () => {
+      // Only process gamepad input if the window has focus
+      if (!document.hasFocus()) {
+        animationFrameId = requestAnimationFrame(pollGamepads);
+        return;
+      }
+
       const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
 
       // Find the first connected gamepad

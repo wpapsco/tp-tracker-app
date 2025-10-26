@@ -127,6 +127,16 @@ export function RegionTabs() {
           title: "Show Excluded Checks",
           toggleName: "showExcludedItems"
       },
+      {
+          emoji: "💡",
+          title: "Show Hint Signs",
+          toggleName: "showHints"
+      },
+      {
+          emoji: "🎵",
+          title: "Show Howling Stones",
+          toggleName: "showHowlingStones"
+      },
   ]
 
   return (

@@ -230,5 +230,7 @@ export enum Item {
     Goron_Mines_Big_Key,
     Coro_Key,
     Gives_Vanilla,
-    Vanilla
+    Vanilla,
+    Hint,
+    Howling_Stone
 }

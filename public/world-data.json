@@ -40,7 +40,8 @@
       "Checks": [
         "Arbiters Grounds Torch Room East Chest",
         "Arbiters Grounds Torch Room West Chest",
-        "Arbiters Grounds Torch Room Poe"
+        "Arbiters Grounds Torch Room Poe",
+        "Arbiters_Grounds_Sign"
       ],
       "Region": "Arbiters Grounds"
     },
@@ -209,7 +210,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "City_in_The_Sky_Sign"
       ],
       "Region": "City in The Sky"
     },
@@ -331,7 +333,8 @@
       "Checks": [
         "Forest Temple Central Chest Behind Stairs",
         "Forest Temple Central North Chest",
-        "Forest Temple Central Chest Hanging From Web"
+        "Forest Temple Central Chest Hanging From Web",
+        "Forest_Temple_Sign"
       ],
       "Region": "Forest Temple"
     },
@@ -518,7 +521,8 @@
         "Goron Mines Dangoro Chest",
         "Goron Mines Beamos Room Chest",
         "Goron Mines Gor Liggs Chest",
-        "Goron Mines Gor Liggs Key Shard"
+        "Goron Mines Gor Liggs Key Shard",
+        "Goron_Mines_Sign"
       ],
       "Region": "Goron Mines"
     },
@@ -556,7 +560,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Hyrule_Castle_Sign"
       ],
       "Region": "Hyrule Castle"
     },
@@ -777,7 +782,8 @@
         "Lakebed Temple Central Room Small Chest",
         "Lakebed Temple Central Room Chest",
         "Lakebed Temple Chandelier Chest",
-        "Lakebed Temple Central Room Spire Chest"
+        "Lakebed Temple Central Room Spire Chest",
+        "Lakebed_Temple_Sign"
       ],
       "Region": "Lakebed Temple"
     },
@@ -880,7 +886,8 @@
         }
       ],
       "Checks": [
-        "Palace of Twilight Collect Both Sols"
+        "Palace of Twilight Collect Both Sols",
+        "Palace_of_Twilight_Sign"
       ],
       "Region": "Palace of Twilight"
     },
@@ -1280,7 +1287,8 @@
         }
       ],
       "Checks": [
-        "Snowpeak Ruins Mansion Map"
+        "Snowpeak Ruins Mansion Map",
+        "Snowpeak_Ruins_Sign"
       ],
       "Region": "Snowpeak Ruins"
     },
@@ -1400,7 +1408,8 @@
         }
       ],
       "Checks": [
-        "Temple of Time Lobby Lantern Chest"
+        "Temple of Time Lobby Lantern Chest",
+        "Temple_of_Time_Entrance_Sign"
       ],
       "Region": "Temple of Time"
     },
@@ -1432,7 +1441,8 @@
       ],
       "Checks": [
         "Temple of Time Moving Wall Beamos Room Chest",
-        "Temple of Time Moving Wall Dinalfos Room Chest"
+        "Temple of Time Moving Wall Dinalfos Room Chest",
+        "Temple_of_Time_Midpoint_Sign"
       ],
       "Region": "Temple of Time"
     },
@@ -1508,7 +1518,9 @@
       ],
       "Checks": [
         "Death Mountain Alcove Chest",
-        "Death Mountain Trail Poe"
+        "Death Mountain Trail Poe",
+        "Death_Mountain_Sign",
+        "Death_Mountain_Howling_Stone"
       ],
       "Region": "Death Mountain"
     },
@@ -1637,7 +1649,9 @@
       "Checks": [
         "Cats Hide and Seek Minigame",
         "Ilia Charm",
-        "Hidden Village Poe"
+        "Hidden Village Poe",
+        "Hidden_Village_Sign",
+        "Hidden_Village_Howling_Stone"
       ],
       "Region": "Hidden Village"
     },
@@ -1685,7 +1699,8 @@
         "Kakariko Gorge Owl Statue Sky Character",
         "Kakariko Gorge Male Pill Bug",
         "Kakariko Gorge Female Pill Bug",
-        "Kakariko Gorge Poe"
+        "Kakariko Gorge Poe",
+        "Kakariko_Gorge_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -1735,7 +1750,8 @@
         "Eldin Lantern Cave First Chest",
         "Eldin Lantern Cave Lantern Chest",
         "Eldin Lantern Cave Second Chest",
-        "Eldin Lantern Cave Poe"
+        "Eldin Lantern Cave Poe",
+        "Lake_Lantern_Cave_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -1792,7 +1808,8 @@
         "Eldin Field Male Grasshopper",
         "Eldin Field Female Grasshopper",
         "Bridge of Eldin Male Phasmid",
-        "Bridge of Eldin Female Phasmid"
+        "Bridge of Eldin Female Phasmid",
+        "Eldin_Field_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -1868,7 +1885,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "North_Eldin_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -2076,7 +2094,8 @@
       "Checks": [
         "Kakariko Village Bomb Shop Poe",
         "Kakariko Village Watchtower Poe",
-        "Kakariko Watchtower Alcove Chest"
+        "Kakariko Watchtower Alcove Chest",
+        "Kakariko_Village_Sign"
       ],
       "Region": "Kakariko Village"
     },
@@ -2468,7 +2487,8 @@
         "Kakariko Graveyard Male Ant",
         "Kakariko Graveyard Grave Poe",
         "Kakariko Graveyard Open Poe",
-        "Kakariko Graveyard Golden Wolf"
+        "Kakariko Graveyard Golden Wolf",
+        "Kakariko_Graveyard_Sign"
       ],
       "Region": "Kakariko Village"
     },
@@ -2531,7 +2551,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Faron_Woods_Sign"
       ],
       "Region": "Faron Woods"
     },
@@ -2860,7 +2881,8 @@
         "Faron Field Tree Heart Piece",
         "Faron Field Male Beetle",
         "Faron Field Female Beetle",
-        "Faron Field Poe"
+        "Faron Field Poe",
+        "Faron_Field_Sign"
       ],
       "Region": "Hyrule Field - Faron Province"
     },
@@ -2927,7 +2949,8 @@
       ],
       "Checks": [
         "Lost Woods Lantern Chest",
-        "Lost Woods Waterfall Poe"
+        "Lost Woods Waterfall Poe",
+        "North_Faron_Woods_Howling_Stone"
       ],
       "Region": "Sacred Grove"
     },
@@ -3009,7 +3032,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Sacred_Grove_Sign"
       ],
       "Region": "Sacred Grove"
     },
@@ -3082,7 +3106,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Cave_of_Ordeals_Sign"
       ],
       "Region": "Gerudo Desert"
     },
@@ -3165,7 +3190,8 @@
         "Gerudo Desert Owl Statue Sky Character",
         "Gerudo Desert Male Dayfly",
         "Gerudo Desert Female Dayfly",
-        "Gerudo Desert East Poe"
+        "Gerudo Desert East Poe",
+        "Gerudo_Desert_Sign"
       ],
       "Region": "Gerudo Desert"
     },
@@ -3309,7 +3335,8 @@
         "Bulblin Camp Small Chest in Back of Camp",
         "Bulblin Camp Roasted Boar",
         "Bulblin Camp Poe",
-        "Bulblin Guard Key"
+        "Bulblin Guard Key",
+        "Bulblin_Camp_Sign"
       ],
       "Region": "Gerudo Desert"
     },
@@ -3454,7 +3481,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Castle_Town_Sign"
       ],
       "Region": "Castle Town"
     },
@@ -3866,7 +3894,8 @@
         "Lanayru Field Behind Gate Underwater Chest",
         "Lanayru Field Male Stag Beetle",
         "Lanayru Field Female Stag Beetle",
-        "Lanayru Field Bridge Poe"
+        "Lanayru Field Bridge Poe",
+        "Lanayru_Field_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -4000,7 +4029,8 @@
         "West Hyrule Field Male Butterfly",
         "West Hyrule Field Female Butterfly",
         "Hyrule Field Amphitheater Poe",
-        "West Hyrule Field Golden Wolf"
+        "West Hyrule Field Golden Wolf",
+        "Beside_Castle_Town_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -4079,7 +4109,8 @@
         "Outside South Castle Town Male Ladybug",
         "Outside South Castle Town Female Ladybug",
         "Outside South Castle Town Poe",
-        "Outside South Castle Town Golden Wolf"
+        "Outside South Castle Town Golden Wolf",
+        "South_of_Castle_Town_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -4138,7 +4169,8 @@
         "Lake Hylia Bridge Owl Statue Chest",
         "Lake Hylia Bridge Owl Statue Sky Character",
         "Lake Hylia Bridge Male Mantis",
-        "Lake Hylia Bridge Female Mantis"
+        "Lake Hylia Bridge Female Mantis",
+        "Great_Bridge_of_Hylia_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -4228,7 +4260,9 @@
         "Lake Hylia Alcove Poe",
         "Lake Hylia Dock Poe",
         "Lake Hylia Tower Poe",
-        "Plumm Fruit Balloon Minigame"
+        "Plumm Fruit Balloon Minigame",
+        "Lake_Hylia_Sign",
+        "Lake_Hylia_Howling_Stone"
       ],
       "Region": "Lake Hylia"
     },
@@ -4281,7 +4315,8 @@
         "Lanayru Spring Back Room Right Chest",
         "Lanayru Spring Back Room Lantern Chest",
         "Lanayru Spring East Double Clawshot Chest",
-        "Lanayru Spring West Double Clawshot Chest"
+        "Lanayru Spring West Double Clawshot Chest",
+        "Lanayru_Spring_Sign"
       ],
       "Region": "Lake Hylia"
     },
@@ -4363,7 +4398,9 @@
       ],
       "Checks": [
         "Upper Zoras River Female Dragonfly",
-        "Upper Zoras River Poe"
+        "Upper Zoras River Poe",
+        "Upper_Zora's_River_Sign",
+        "Upper_Zoras_River_Howling_Stone"
       ],
       "Region": "Zoras Domain"
     },
@@ -4458,7 +4495,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Zora's_Domain_Sign"
       ],
       "Region": "Zoras Domain"
     },
@@ -4494,7 +4532,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Ordon_Sign"
       ],
       "Region": "Ordona Province"
     },
@@ -4776,7 +4815,8 @@
       "Checks": [
         "Snowpeak Above Freezard Grotto Poe",
         "Snowpeak Blizzard Poe",
-        "Snowpeak Poe Among Trees"
+        "Snowpeak Poe Among Trees",
+        "Snowpeak_Mountain_Sign"
       ],
       "Region": "Snowpeak Province"
     },
@@ -4821,7 +4861,8 @@
       "Checks": [
         "Snowpeak Cave Ice Lantern Chest",
         "Snowboard Racing Prize",
-        "Snowpeak Cave Ice Poe"
+        "Snowpeak Cave Ice Poe",
+        "Snowpeak_Howling_Stone"
       ],
       "Region": "Snowpeak Province"
     },
@@ -10099,6 +10140,334 @@
       ],
       "itemId": "Poe_Soul",
       "filename": "Snowpeak Poe Among Trees"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Ordon_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Faron_Woods_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Faron_Field_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Sacred_Grove_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Death_Mountain_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Eldin_Field_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "North_Eldin_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Kakariko_Gorge_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Kakariko_Village_Sign"
+    },
+    {
+      "requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Kakariko_Graveyard_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Hidden_Village_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Beside_Castle_Town_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Castle_Town_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "South_of_Castle_Town_Sign"
+    },
+    {
+      "requirements": "(Progressive_Clawshot, 1)",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Great_Bridge_of_Hylia_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lake_Hylia_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lake_Lantern_Cave_Sign"
+    },
+    {
+      "requirements": "Iron_Boots or Zora_Armor",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lanayru_Spring_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lanayru_Field_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Zora's_Domain_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Upper_Zora's_River_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Gerudo_Desert_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Bulblin_Camp_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Cave_of_Ordeals_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Snowpeak_Mountain_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Forest_Temple_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Goron_Mines_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lakebed_Temple_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Arbiters_Grounds_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Snowpeak_Ruins_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Temple_of_Time_Entrance_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Temple_of_Time_Midpoint_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "City_in_The_Sky_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Palace_of_Twilight_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Hyrule_Castle_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Death_Mountain_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Upper_Zoras_River_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "North_Faron_Woods_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Lake_Hylia_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Snowpeak_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Hidden_Village_Howling_Stone"
     }
   ],
   "glitchedRooms": [
@@ -10142,7 +10511,8 @@
       "Checks": [
         "Arbiters Grounds Torch Room East Chest",
         "Arbiters Grounds Torch Room West Chest",
-        "Arbiters Grounds Torch Room Poe"
+        "Arbiters Grounds Torch Room Poe",
+        "Arbiters_Grounds_Sign"
       ],
       "Region": "Arbiters Grounds"
     },
@@ -10315,7 +10685,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "City_in_The_Sky_Sign"
       ],
       "Region": "City in The Sky"
     },
@@ -10437,7 +10808,8 @@
       "Checks": [
         "Forest Temple Central Chest Behind Stairs",
         "Forest Temple Central North Chest",
-        "Forest Temple Central Chest Hanging From Web"
+        "Forest Temple Central Chest Hanging From Web",
+        "Forest_Temple_Sign"
       ],
       "Region": "Forest Temple"
     },
@@ -10624,7 +10996,8 @@
         "Goron Mines Dangoro Chest",
         "Goron Mines Beamos Room Chest",
         "Goron Mines Gor Liggs Chest",
-        "Goron Mines Gor Liggs Key Shard"
+        "Goron Mines Gor Liggs Key Shard",
+        "Goron_Mines_Sign"
       ],
       "Region": "Goron Mines"
     },
@@ -10662,7 +11035,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Hyrule_Castle_Sign"
       ],
       "Region": "Hyrule Castle"
     },
@@ -10883,7 +11257,8 @@
         "Lakebed Temple Central Room Small Chest",
         "Lakebed Temple Central Room Chest",
         "Lakebed Temple Chandelier Chest",
-        "Lakebed Temple Central Room Spire Chest"
+        "Lakebed Temple Central Room Spire Chest",
+        "Lakebed_Temple_Sign"
       ],
       "Region": "Lakebed Temple"
     },
@@ -10990,7 +11365,8 @@
         }
       ],
       "Checks": [
-        "Palace of Twilight Collect Both Sols"
+        "Palace of Twilight Collect Both Sols",
+        "Palace_of_Twilight_Sign"
       ],
       "Region": "Palace of Twilight"
     },
@@ -11427,7 +11803,8 @@
         }
       ],
       "Checks": [
-        "Snowpeak Ruins Mansion Map"
+        "Snowpeak Ruins Mansion Map",
+        "Snowpeak_Ruins_Sign"
       ],
       "Region": "Snowpeak Ruins"
     },
@@ -11547,7 +11924,8 @@
         }
       ],
       "Checks": [
-        "Temple of Time Lobby Lantern Chest"
+        "Temple of Time Lobby Lantern Chest",
+        "Temple_of_Time_Entrance_Sign"
       ],
       "Region": "Temple of Time"
     },
@@ -11579,7 +11957,8 @@
       ],
       "Checks": [
         "Temple of Time Moving Wall Beamos Room Chest",
-        "Temple of Time Moving Wall Dinalfos Room Chest"
+        "Temple of Time Moving Wall Dinalfos Room Chest",
+        "Temple_of_Time_Midpoint_Sign"
       ],
       "Region": "Temple of Time"
     },
@@ -11655,7 +12034,9 @@
       ],
       "Checks": [
         "Death Mountain Alcove Chest",
-        "Death Mountain Trail Poe"
+        "Death Mountain Trail Poe",
+        "Death_Mountain_Sign",
+        "Death_Mountain_Howling_Stone"
       ],
       "Region": "Death Mountain"
     },
@@ -11784,7 +12165,9 @@
       "Checks": [
         "Cats Hide and Seek Minigame",
         "Ilia Charm",
-        "Hidden Village Poe"
+        "Hidden Village Poe",
+        "Hidden_Village_Sign",
+        "Hidden_Village_Howling_Stone"
       ],
       "Region": "Hidden Village"
     },
@@ -11832,7 +12215,8 @@
         "Kakariko Gorge Owl Statue Sky Character",
         "Kakariko Gorge Male Pill Bug",
         "Kakariko Gorge Female Pill Bug",
-        "Kakariko Gorge Poe"
+        "Kakariko Gorge Poe",
+        "Kakariko_Gorge_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -11882,7 +12266,8 @@
         "Eldin Lantern Cave First Chest",
         "Eldin Lantern Cave Lantern Chest",
         "Eldin Lantern Cave Second Chest",
-        "Eldin Lantern Cave Poe"
+        "Eldin Lantern Cave Poe",
+        "Lake_Lantern_Cave_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -11943,7 +12328,8 @@
         "Eldin Field Male Grasshopper",
         "Eldin Field Female Grasshopper",
         "Bridge of Eldin Male Phasmid",
-        "Bridge of Eldin Female Phasmid"
+        "Bridge of Eldin Female Phasmid",
+        "Eldin_Field_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -12019,7 +12405,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "North_Eldin_Sign"
       ],
       "Region": "Hyrule Field - Eldin Province"
     },
@@ -12227,7 +12614,8 @@
       "Checks": [
         "Kakariko Village Bomb Shop Poe",
         "Kakariko Village Watchtower Poe",
-        "Kakariko Watchtower Alcove Chest"
+        "Kakariko Watchtower Alcove Chest",
+        "Kakariko_Village_Sign"
       ],
       "Region": "Kakariko Village"
     },
@@ -12619,7 +13007,8 @@
         "Kakariko Graveyard Male Ant",
         "Kakariko Graveyard Grave Poe",
         "Kakariko Graveyard Open Poe",
-        "Kakariko Graveyard Golden Wolf"
+        "Kakariko Graveyard Golden Wolf",
+        "Kakariko_Graveyard_Sign"
       ],
       "Region": "Kakariko Village"
     },
@@ -12682,7 +13071,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Faron_Woods_Sign"
       ],
       "Region": "Faron Woods"
     },
@@ -13011,7 +13401,8 @@
         "Faron Field Tree Heart Piece",
         "Faron Field Male Beetle",
         "Faron Field Female Beetle",
-        "Faron Field Poe"
+        "Faron Field Poe",
+        "Faron_Field_Sign"
       ],
       "Region": "Hyrule Field - Faron Province"
     },
@@ -13078,7 +13469,8 @@
       ],
       "Checks": [
         "Lost Woods Lantern Chest",
-        "Lost Woods Waterfall Poe"
+        "Lost Woods Waterfall Poe",
+        "North_Faron_Woods_Howling_Stone"
       ],
       "Region": "Sacred Grove"
     },
@@ -13160,7 +13552,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Sacred_Grove_Sign"
       ],
       "Region": "Sacred Grove"
     },
@@ -13233,7 +13626,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Cave_of_Ordeals_Sign"
       ],
       "Region": "Gerudo Desert"
     },
@@ -13316,7 +13710,8 @@
         "Gerudo Desert Owl Statue Sky Character",
         "Gerudo Desert Male Dayfly",
         "Gerudo Desert Female Dayfly",
-        "Gerudo Desert East Poe"
+        "Gerudo Desert East Poe",
+        "Gerudo_Desert_Sign"
       ],
       "Region": "Gerudo Desert"
     },
@@ -13460,7 +13855,8 @@
         "Bulblin Camp Small Chest in Back of Camp",
         "Bulblin Camp Roasted Boar",
         "Bulblin Camp Poe",
-        "Bulblin Guard Key"
+        "Bulblin Guard Key",
+        "Bulblin_Camp_Sign"
       ],
       "Region": "Gerudo Desert"
     },
@@ -13605,7 +14001,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Castle_Town_Sign"
       ],
       "Region": "Castle Town"
     },
@@ -14017,7 +14414,8 @@
         "Lanayru Field Behind Gate Underwater Chest",
         "Lanayru Field Male Stag Beetle",
         "Lanayru Field Female Stag Beetle",
-        "Lanayru Field Bridge Poe"
+        "Lanayru Field Bridge Poe",
+        "Lanayru_Field_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -14151,7 +14549,8 @@
         "West Hyrule Field Male Butterfly",
         "West Hyrule Field Female Butterfly",
         "Hyrule Field Amphitheater Poe",
-        "West Hyrule Field Golden Wolf"
+        "West Hyrule Field Golden Wolf",
+        "Beside_Castle_Town_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -14230,7 +14629,8 @@
         "Outside South Castle Town Male Ladybug",
         "Outside South Castle Town Female Ladybug",
         "Outside South Castle Town Poe",
-        "Outside South Castle Town Golden Wolf"
+        "Outside South Castle Town Golden Wolf",
+        "South_of_Castle_Town_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -14289,7 +14689,8 @@
         "Lake Hylia Bridge Owl Statue Chest",
         "Lake Hylia Bridge Owl Statue Sky Character",
         "Lake Hylia Bridge Male Mantis",
-        "Lake Hylia Bridge Female Mantis"
+        "Lake Hylia Bridge Female Mantis",
+        "Great_Bridge_of_Hylia_Sign"
       ],
       "Region": "Hyrule Field - Lanayru Province"
     },
@@ -14379,7 +14780,9 @@
         "Lake Hylia Alcove Poe",
         "Lake Hylia Dock Poe",
         "Lake Hylia Tower Poe",
-        "Plumm Fruit Balloon Minigame"
+        "Plumm Fruit Balloon Minigame",
+        "Lake_Hylia_Sign",
+        "Lake_Hylia_Howling_Stone"
       ],
       "Region": "Lake Hylia"
     },
@@ -14432,7 +14835,8 @@
         "Lanayru Spring Back Room Right Chest",
         "Lanayru Spring Back Room Lantern Chest",
         "Lanayru Spring East Double Clawshot Chest",
-        "Lanayru Spring West Double Clawshot Chest"
+        "Lanayru Spring West Double Clawshot Chest",
+        "Lanayru_Spring_Sign"
       ],
       "Region": "Lake Hylia"
     },
@@ -14514,7 +14918,9 @@
       ],
       "Checks": [
         "Upper Zoras River Female Dragonfly",
-        "Upper Zoras River Poe"
+        "Upper Zoras River Poe",
+        "Upper_Zora's_River_Sign",
+        "Upper_Zoras_River_Howling_Stone"
       ],
       "Region": "Zoras Domain"
     },
@@ -14609,7 +15015,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Zora's_Domain_Sign"
       ],
       "Region": "Zoras Domain"
     },
@@ -14645,7 +15052,8 @@
         }
       ],
       "Checks": [
-        ""
+        "",
+        "Ordon_Sign"
       ],
       "Region": "Ordona Province"
     },
@@ -14927,7 +15335,8 @@
       "Checks": [
         "Snowpeak Above Freezard Grotto Poe",
         "Snowpeak Blizzard Poe",
-        "Snowpeak Poe Among Trees"
+        "Snowpeak Poe Among Trees",
+        "Snowpeak_Mountain_Sign"
       ],
       "Region": "Snowpeak Province"
     },
@@ -14972,7 +15381,8 @@
       "Checks": [
         "Snowpeak Cave Ice Lantern Chest",
         "Snowboard Racing Prize",
-        "Snowpeak Cave Ice Poe"
+        "Snowpeak Cave Ice Poe",
+        "Snowpeak_Howling_Stone"
       ],
       "Region": "Snowpeak Province"
     },
@@ -24844,6 +25254,334 @@
       ],
       "itemId": "Poe_Soul",
       "filename": "Snowpeak Poe Among Trees"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Ordon_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Faron_Woods_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Faron_Field_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Sacred_Grove_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Death_Mountain_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Eldin_Field_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "North_Eldin_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Kakariko_Gorge_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Kakariko_Village_Sign"
+    },
+    {
+      "requirements": "Gate_Keys or (Setting.smallKeySettings equals Keysy)",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Kakariko_Graveyard_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Hidden_Village_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Beside_Castle_Town_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Castle_Town_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "South_of_Castle_Town_Sign"
+    },
+    {
+      "requirements": "(Progressive_Clawshot, 1)",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Great_Bridge_of_Hylia_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lake_Hylia_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lake_Lantern_Cave_Sign"
+    },
+    {
+      "requirements": "Iron_Boots or Zora_Armor or Magic_Armor",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lanayru_Spring_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lanayru_Field_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Zora's_Domain_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Upper_Zora's_River_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Gerudo_Desert_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Bulblin_Camp_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Cave_of_Ordeals_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Snowpeak_Mountain_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Forest_Temple_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Goron_Mines_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Lakebed_Temple_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Arbiters_Grounds_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Snowpeak_Ruins_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Temple_of_Time_Entrance_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Temple_of_Time_Midpoint_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "City_in_The_Sky_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Palace_of_Twilight_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Hint"
+      ],
+      "itemId": "Hint",
+      "filename": "Hyrule_Castle_Sign"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Death_Mountain_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Upper_Zoras_River_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "North_Faron_Woods_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Lake_Hylia_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Snowpeak_Howling_Stone"
+    },
+    {
+      "requirements": "true",
+      "checkCategory": [
+        "Howling Stone"
+      ],
+      "itemId": "Howling_Stone",
+      "filename": "Hidden_Village_Howling_Stone"
     }
   ]
 }

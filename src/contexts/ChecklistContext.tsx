@@ -27,7 +27,9 @@ showHiddenSkills: true,
 showExcludedItems: true,
 showOnlyAvailable: false,
 showItemList: false,
-showCheckItems: false
+showCheckItems: false,
+showHints: false,
+showHowlingStones: false
 }
 
 
@@ -59,7 +61,7 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (logic) {
       setIsGoMode(logic.isGoMode());
-      setHeldItems(logic.getHeldItems());
+      setHeldItems(logic.getHeldItems() as {[key: string]: number});
     }
   }, [logic, checklist])
 
@@ -101,7 +103,9 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
         showExcludedItems: true,
         showOnlyAvailable: false,
         showItemList: false,
-        showCheckItems: false
+        showCheckItems: false,
+        showHints: false,
+        showHowlingStones: false
       };
       setFilter(newFilter);
 
@@ -156,7 +160,9 @@ export function ChecklistProvider({ children }: { children: ReactNode }) {
       showExcludedItems: true,
       showOnlyAvailable: false,
       showItemList: false,
-      showCheckItems: false
+      showCheckItems: false,
+      showHints: false,
+      showHowlingStones: false
     };
     setFilter(savedFilter);
 

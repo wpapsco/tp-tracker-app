@@ -101,8 +101,10 @@ export class RandoLogic {
             showSkyCharacters: true,
             showExcludedItems: true,
             showOnlyAvailable: false,
-            showItemList: true,
-            showCheckItems: true
+            showItemList: false,
+            showCheckItems: false,
+            showHints: false,
+            showHowlingStones: false
         }
 
         let checklist: Checklist = {}
@@ -219,21 +221,27 @@ export class RandoLogic {
     }
 
     private shouldShowCheck(entry: CheckEntry, checkFilter: CheckFilter): boolean {
+        if (entry.checkCategory.includes("Hint")) {
+            return checkFilter.showHints
+        }
+        if (entry.checkCategory.includes("Howling Stone")) {
+            return checkFilter.showHowlingStones
+        }
         if (entry.checkCategory.includes("Golden Bug")) {
             return checkFilter.showGoldenBugs
         }
         if (entry.checkCategory.includes("Sky Book")) {
             return checkFilter.showSkyCharacters
-        } 
+        }
         if (entry.checkCategory.includes("Npc")) {
             return checkFilter.showNpcItems
-        } 
+        }
         if (entry.checkCategory.includes("Shop")) {
             return checkFilter.showShopItems
-        } 
+        }
         if (entry.checkCategory.includes("Hidden Skill")) {
             return checkFilter.showHiddenSkills
-        } 
+        }
         if (entry.checkCategory.includes("Poe")) {
             if (checkFilter.showPoes == "Dungeons") {
                 return entry.checkCategory.includes("Dungeon")
@@ -266,6 +274,8 @@ export interface CheckFilter {
     showOnlyAvailable: boolean;
     showItemList: boolean;
     showCheckItems: boolean;
+    showHints: boolean;
+    showHowlingStones: boolean;
 }
 
 export interface SaveData {
